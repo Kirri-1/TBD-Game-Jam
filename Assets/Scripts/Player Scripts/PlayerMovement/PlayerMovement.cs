@@ -51,25 +51,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 StartCoroutine(MovePlayer(Vector3.up));
             }
-
-
-
-            /*if (Input.GetKey(KeyCode.W))
-            {
-                StartCoroutine(MovePlayer(Vector3.up));
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                StartCoroutine(MovePlayer(Vector3.down));
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                StartCoroutine(MovePlayer(Vector3.left));
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                StartCoroutine(MovePlayer(Vector3.right));
-            }*/
         }
     }
     private IEnumerator MovePlayer(Vector3 direction)

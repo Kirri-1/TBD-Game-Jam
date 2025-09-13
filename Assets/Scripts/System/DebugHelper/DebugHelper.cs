@@ -60,7 +60,7 @@ public static class DebugHelper
     {
         if (showInConsole)
         {
-            UnityEngine.Debug.Log($"Info, on the {gameObject.name}, {message}. This is in the script: {scriptName.GetType().Name}, with this part of the code: {location}", gameObject);
+            UnityEngine.Debug.Log($"Info, on the {gameObject.name}: {message}. This is in the script: {scriptName.GetType().Name}, with this part of the code: {location}", gameObject);
         }
     }
     #endregion
