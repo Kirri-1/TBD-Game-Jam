@@ -20,7 +20,6 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
         int speed = 10;
-
         xInput = Input.GetAxisRaw("Horizontal");
         yInput = Input.GetAxisRaw("Vertical");
 
