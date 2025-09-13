@@ -12,7 +12,7 @@ public class PowerSourceScript : MonoBehaviour
 
     [Header("Bools")]
     [SerializeField]                                        
-    private bool isMoving = false;                          // Is moving
+    private bool isHolding = false;                         // Is holding the power cell
     [SerializeField]
     private bool canTeleport = false;                       // Can teleport 
     [SerializeField]
@@ -20,15 +20,16 @@ public class PowerSourceScript : MonoBehaviour
     [SerializeField]
     private bool isRoated = false;                          // When the spirte is roated
 
-    [Header("Layeres")]
+
+    [Header("Game object places")]
     [SerializeField]
     private LayerMask toIgnoreLayers;                       // Ignoring layers
     [SerializeField]
-    private LayerMask corectPlaceLayer;                     // Correct Place layer
+    private GameObject corectPlace;                         // Correct Place
     [SerializeField]
-    private LayerMask teleportLayer;                        // Teleport layer
+    private List<GameObject> teleportObj;                   // Teleport pbjects
     [SerializeField]
-    private LayerMask obDamgeLayers;                        // Teleport layer
+    private List<GameObject> canDamgeObj;                   // Teleport layer
 
     [Header("External")]
     [SerializeField]
@@ -41,47 +42,55 @@ public class PowerSourceScript : MonoBehaviour
         helth = powSoData.health;
     }
 
-    private void Start()
-    {
-        Physics2D.IgnoreLayerCollision(this.gameObject.layer, toIgnoreLayers.value);
-    }
-
-
     #region Detection checks
     // Triggers
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.layer == teleportLayer)
-            // Teleport
-            SetCanTeleport(true);
-
-
         // Corect place
-        if (collision.gameObject.layer == corectPlaceLayer)
+        if (collision.gameObject.GetInstanceID() == corectPlace.GetInstanceID())
             SetInCorectPlace(true);
 
-
-        // Obsticles that do damage
-        if (collision.gameObject.layer == obDamgeLayers)
+        else if (teleportObj != null)
         {
-            SetDamHealth(powSoData.healthDamageFromObj);
+            foreach (var telport in teleportObj)
+            {
+                if (collision.gameObject.GetInstanceID() == telport.GetInstanceID())
+                    // Teleport
+                    SetCanTeleport(true);
+            }
+        }
 
-            // Health gone
-            if (GetHealth() <= 0)
-                ResetAll();
+        if (canDamgeObj != null)
+        {
+            // Obsticles that do damage
+            foreach (var damagOb in canDamgeObj)
+            {
+                if (collision.gameObject.GetInstanceID() == damagOb.GetInstanceID())
+                {
+                    SetDamHealth(powSoData.healthDamageFromObj);
+
+                    // Health gone
+                    if (GetHealth() <= 0)
+                        ResetAll();
+                }
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // Teleport
-        if (collision.gameObject.layer == teleportLayer)
-            SetCanTeleport(false);
-
-
         // Corect place to set
-        if (collision.gameObject.layer == corectPlaceLayer)
+        if (collision.gameObject.GetInstanceID() == corectPlace.GetInstanceID())
             SetInCorectPlace(false);
+
+        else if (teleportObj != null)
+        {
+            foreach (var telport in teleportObj)
+            {
+                if (collision.gameObject.GetInstanceID() == telport.GetInstanceID())
+                    // Teleport
+                    SetCanTeleport(false);
+            }
+        }
     }
 
     #endregion
@@ -89,7 +98,7 @@ public class PowerSourceScript : MonoBehaviour
 
     #region Functionality
     // Get the power source data
-    PowerSourceData GetPowerSourceData()
+    public PowerSourceData GetPowerSourceData()
     {
         return powSoData;
     }
@@ -99,16 +108,16 @@ public class PowerSourceScript : MonoBehaviour
     public bool GetIsMoving()
     {
         // Get is moving
-        return isMoving;
+        return isHolding;
     }
     public void SetIsMoving(bool set_state)
     {
         // Set is moving
-         isMoving = set_state;
+         isHolding = set_state;
     }
 
     // Teleport
-    bool GetCanTeleport()
+    public bool GetCanTeleport()
     {
         // Get can teleport
         return canTeleport;
@@ -119,7 +128,7 @@ public class PowerSourceScript : MonoBehaviour
         canTeleport = set_state;
     }
 
-    bool getIsRoatedObj()
+    public bool GetIsRoatedObj()
     {
         return isRoated;
     }
