@@ -392,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerSource
   startPos: {x: 0, y: 0, z: 0}
   helth: 0
-  isMoving: 0
+  isHolding: 0
   canTeleport: 0
   inCorectPlace: 0
   isRoated: 0
@@ -422,7 +422,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 1232592539}
   - component: {fileID: 1232592538}
   - component: {fileID: 1232592540}
-  m_Layer: 1
+  m_Layer: 2
   m_Name: Smae wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
