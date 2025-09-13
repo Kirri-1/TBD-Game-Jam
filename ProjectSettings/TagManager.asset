@@ -42,5 +42,23 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 2601242529
+    locked: 0
+  - name: Laser
+    uniqueID: 483707037
+    locked: 0
+  - name: Hole
+    uniqueID: 3235580087
+    locked: 0
+  - name: Ice
+    uniqueID: 564513847
+    locked: 0
+  - name: Player
+    uniqueID: 739911671
+    locked: 0
+  - name: Wall
+    uniqueID: 509443001
+    locked: 0
   m_RenderingLayers:
   - Default

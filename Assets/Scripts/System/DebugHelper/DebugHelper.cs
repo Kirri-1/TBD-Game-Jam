@@ -7,6 +7,7 @@ using UnityEngine;
 
 public static class DebugHelper
 {
+
     #region CriticalNullReferenceLogger
     public static void CriticalNullReferenceLogger(Component scriptName, Type requiredComponentName, string location, string codeSnippet, GameObject gameObject, bool condition)
     {
