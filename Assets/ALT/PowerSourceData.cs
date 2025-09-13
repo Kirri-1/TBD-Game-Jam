@@ -6,4 +6,5 @@ public class PowerSourceData : ScriptableObject
     public int health = 0;
     public int healthDamageFromObj = 0;
     public int healthDamageFromPlayer = 0;
+    public bool telpoRotate = false;
 }
