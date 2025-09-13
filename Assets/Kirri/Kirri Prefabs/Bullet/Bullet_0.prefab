@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3330423666374814728}
   - component: {fileID: 8064326733520894409}
   - component: {fileID: 7940398098276820130}
+  - component: {fileID: 7453770978437728466}
   m_Layer: 0
   m_Name: Bullet_0
   m_TagString: Untagged
@@ -179,3 +180,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.1875, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &7453770978437728466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2160703700829955161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81996a40301eea84286c4f1acf424ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OnBreak
+  m_waitTime: 0.5
+  m_excludedTagsList:
+  - Player
+  - Wall
+  - Ground
+  - Laser
+  - Cell
+  - Teleporter
+  - CorrectPanel
+  - Bullet
