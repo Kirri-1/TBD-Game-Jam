@@ -18,7 +18,6 @@ public class PowerSourceScript : MonoBehaviour
     [SerializeField]
     private bool inCorectPlace = false;                     // In corect place
 
-
     [Header("Layeres")]
     [SerializeField]
     private LayerMask toIgnoreLayers;                       // Ignoring layers
@@ -28,7 +27,6 @@ public class PowerSourceScript : MonoBehaviour
     private LayerMask teleportLayer;                        // Teleport layer
     [SerializeField]
     private LayerMask obDamgeLayers;                        // Teleport layer
-
 
     [Header("External")]
     [SerializeField]
@@ -79,8 +77,6 @@ public class PowerSourceScript : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-
         // Teleport
         if (collision.gameObject.layer == teleportLayer)
             SetCanTeleport(false);
@@ -145,7 +141,6 @@ public class PowerSourceScript : MonoBehaviour
         if (helth < 0)
             helth = 0;
     }
-
     // Got hit by player's laser
     void GotHitByPlayer()
     {

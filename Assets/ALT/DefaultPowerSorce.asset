@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: DefaultPowerSorce
   m_EditorClassIdentifier: Assembly-CSharp::PowerSourceData
   health: 5
+
   healthDamageFromObj: 3
   healthDamageFromPlayer: 1
