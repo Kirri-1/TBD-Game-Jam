@@ -3,7 +3,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent (typeof(CapsuleCollider2D))]
+[RequireComponent (typeof(BoxCollider2D))]
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D m_playerRb;
@@ -31,8 +31,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Movement()
     {
-        if (!m_isMoving)
-        {
+        if (m_isMoving)
+            return;
+
             float horizontal = Input.GetAxisRaw("Horizontal");
             float vertical = Input.GetAxisRaw("Vertical");
 
@@ -44,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 StartCoroutine(MovePlayer(new Vector2(0, vertical)));
             }
-        }
     }
     private IEnumerator MovePlayer(Vector2 direction)
     {
