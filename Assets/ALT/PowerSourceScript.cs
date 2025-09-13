@@ -94,7 +94,7 @@ public class PowerSourceScript : MonoBehaviour
     }
 
     #endregion
-
+    public Vector2 StartPos => startPos;
 
     #region Functionality
     // Get the power source data
