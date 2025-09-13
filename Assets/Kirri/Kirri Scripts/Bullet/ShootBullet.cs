@@ -3,15 +3,18 @@ using UnityEngine;
 
 public class ShootBullet : MonoBehaviour
 {
+    #region Variables
     [SerializeField] private GameObject m_bulletPrefabs; // 0=Right, 1=Left, 2=Up, 3=Down
 
     [SerializeField] private Transform m_bulletSpawn;
+    #endregion
 
     void Update()
     {
         HandleInput();
     }
 
+    #region HandleInput
     void HandleInput()
     {
         float h = Input.GetAxisRaw("Horizontal");
@@ -28,4 +31,5 @@ public class ShootBullet : MonoBehaviour
             Instantiate(m_bulletPrefabs, m_bulletSpawn.position, m_bulletSpawn.rotation);
         }
     }
+    #endregion
 }

@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class PlayerLivesScript : MonoBehaviour
 {
+    #region Variables
     public PlayerLivesSO m_playerLivesSO; //exposed so other scripts can access it
     public int CurrentLives => m_playerLivesSO.currentLives;
     public int MaxLives => m_playerLivesSO.maxLives;
 #if UNITY_EDITOR
     public bool resetLivesOnStart = true;
 #endif
+    #endregion
+
+    #region Start
     private void Start()
     {
         if (m_playerLivesSO == null)
@@ -26,7 +30,9 @@ public class PlayerLivesScript : MonoBehaviour
             ResetLives();
 #endif
     }
+    #endregion
 
+    #region Lose Life
     public void LoseLife()
     {
         if(m_playerLivesSO == null)
@@ -44,7 +50,9 @@ public class PlayerLivesScript : MonoBehaviour
             DebugHelper.WarningLogger("Player has no more lives", this, "LoseLife() => if(m_playerLivesSO.currentLives > 0)", gameObject);
         }
     }
+    #endregion
 
+    #region Gain Life
     public void GainLife(int giveLives = 1)
     {
         if (m_playerLivesSO == null)
@@ -64,7 +72,9 @@ public class PlayerLivesScript : MonoBehaviour
             DebugHelper.WarningLogger("Player has maximum lives", this, "if(m_playerLivesSO.currentLives < m_playerLivesSO.maxLives)", gameObject);
         }
     }
+    #endregion
 
+    #region Reset Lives
     public void ResetLives()
     {
         if (m_playerLivesSO == null)
@@ -74,7 +84,9 @@ public class PlayerLivesScript : MonoBehaviour
         }
         m_playerLivesSO.currentLives = m_playerLivesSO.maxLives;
     }
+    #endregion
 
+    #region OnCollisionEnter2D
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Hazard"))
@@ -87,5 +99,6 @@ public class PlayerLivesScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    #endregion
 }
 
