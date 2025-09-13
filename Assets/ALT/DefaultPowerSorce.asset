@@ -16,3 +16,6 @@ MonoBehaviour:
   healthDamageFromObj: 1
   healthDamageFromPlayer: 5
   telpoRotate: 0
+
+  healthDamageFromObj: 3
+  healthDamageFromPlayer: 1

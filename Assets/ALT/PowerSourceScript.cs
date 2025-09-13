@@ -31,7 +31,6 @@ public class PowerSourceScript : MonoBehaviour
     [SerializeField]
     private List<GameObject> canDamgeObj;                   // Teleport layer
 
-
     [Header("External")]
     [SerializeField]
     private PowerSourceData powSoData;                      // Power source data
@@ -161,7 +160,6 @@ public class PowerSourceScript : MonoBehaviour
         if (helth < 0)
             helth = 0;
     }
-
     // Got hit by player's laser
     public void GotHitByPlayer()
     {
