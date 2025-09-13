@@ -222,6 +222,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+
     "com.unity.shadergraph": {
       "version": "17.2.0",
       "depth": 1,
