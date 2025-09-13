@@ -4,5 +4,6 @@ using UnityEngine;
 public class PowerSourceData : ScriptableObject
 {
     public int health = 0;
-    public int healthDamage = 0;
+    public int healthDamageFromObj = 0;
+    public int healthDamageFromPlayer = 0;
 }

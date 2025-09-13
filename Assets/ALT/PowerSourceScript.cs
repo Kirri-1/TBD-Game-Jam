@@ -19,26 +19,21 @@ public class PowerSourceScript : MonoBehaviour
     private bool inCorectPlace = false;                     // In corect place
 
 
+    [Header("Layeres")]
+    [SerializeField]
+    private LayerMask toIgnoreLayers;                       // Ignoring layers
+    [SerializeField]
+    private LayerMask corectPlaceLayer;                     // Correct Place layer
+    [SerializeField]
+    private LayerMask teleportLayer;                        // Teleport layer
+    [SerializeField]
+    private LayerMask obDamgeLayers;                        // Teleport layer
+
+
     [Header("External")]
     [SerializeField]
     private PowerSourceData powSoData;                      // Power source data
 
-    ////////////////////////////////
-    [Header("Teleport objects")]
-    [SerializeField]
-    private List<GameObject> telaprtObj = new();            // Teleport objects
-
-    [Header("Can do damage objects")]
-    [SerializeField]
-    private List<GameObject> damaObjs = new();              // Can do damage objects
-
-    [Header("Pass through walls")]
-    [SerializeField]
-    private List<GameObject> passThrouWalls = new();        // Pass through walls
-
-    [Header("Corect Place Object")]
-    [SerializeField]
-    private GameObject correctPlaceObj = null;              // Correct place object
 
     #endregion
 
@@ -48,83 +43,51 @@ public class PowerSourceScript : MonoBehaviour
         helth = powSoData.health;
     }
 
-
-    #region Detection checks
-    // Collstion
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        if (passThrouWalls != null)
-        {
-            foreach (var PassThro in passThrouWalls)
-            {
-                if (collision.gameObject.name == PassThro.name)
-                {
-                    this.GetComponent<BoxCollider2D>().isTrigger = true;
-                }
-            }
-        }
+        Physics2D.IgnoreLayerCollision(gameObject.layer, toIgnoreLayers.value);
     }
 
 
+    #region Detection checks
     // Triggers
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (telaprtObj != null)
-        {
-            foreach (var theTelport in telaprtObj)
-            {
-                if (collision.gameObject.name == theTelport.name)
-                    // Teleport
-                    SetCanTeleport(true);
-            }
-        }
+
+        if (collision.gameObject.layer == teleportLayer)
+            // Teleport
+            SetCanTeleport(true);
+
+
 
         // Corect place to set
-        if (collision.gameObject.name == correctPlaceObj.name)
+        if (collision.gameObject.layer == corectPlaceLayer)
             SetInCorectPlace(true);
 
 
-        if (damaObjs != null)
+        // Obsticles that do damage
+        if (collision.gameObject.layer == obDamgeLayers)
         {
-            foreach (var theDamObj in damaObjs)
-            {
-                // Obsticles that do damage
-                if (collision.gameObject.name == theDamObj.name)
-                {
-                    SetDamHealth(powSoData.healthDamage);
+            SetDamHealth(powSoData.healthDamageFromObj);
 
-                    // Health gone
-                    if (GetHealth() <= 0)
-                        ResetAll();
-                }
-            }
+            Debug.Log("Got hit by: " + obDamgeLayers.ToString());
+
+            // Health gone
+            if (GetHealth() <= 0)
+                ResetAll();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
 
-        if (telaprtObj != null)
-        {
-            foreach (var theTelport in telaprtObj)
-            {
-                // Teleport
-                if (collision.gameObject.name == theTelport.name)
-                    SetCanTeleport(false);
-            }
-        }
 
-        if (passThrouWalls != null)
-        {
-            foreach (var PassThro in passThrouWalls)
-            {
-                // Pass through walls
-                if (collision.gameObject.name == PassThro.name)
-                    this.GetComponent<BoxCollider2D>().isTrigger = false;
-            }
-        }
+        // Teleport
+        if (collision.gameObject.layer == teleportLayer)
+            SetCanTeleport(false);
+
 
         // Corect place to set
-        if (collision.gameObject.name == correctPlaceObj.name)
+        if (collision.gameObject.layer == corectPlaceLayer)
             SetInCorectPlace(false);
     }
 
@@ -182,6 +145,14 @@ public class PowerSourceScript : MonoBehaviour
         if (helth < 0)
             helth = 0;
     }
+
+    // Got hit by player's laser
+    void GotHitByPlayer()
+    {
+        // Set the health damage
+        SetDamHealth(powSoData.healthDamageFromPlayer);
+    }
+
     #endregion
 
 

@@ -395,15 +395,19 @@ MonoBehaviour:
   isMoving: 0
   canTeleport: 0
   inCorectPlace: 0
+  toIgnoreLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  corectPlaceLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  teleportLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  obDamgeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   powSoData: {fileID: 11400000, guid: 4cd729ca707f24f84891fc7716aaf711, type: 2}
-  telaprtObj:
-  - {fileID: 1797088073}
-  - {fileID: 1689291544}
-  damaObjs:
-  - {fileID: 2134845373}
-  passThrouWalls:
-  - {fileID: 1232592537}
-  correctPlaceObj: {fileID: 1982505185}
 --- !u!61 &684905739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -870,8 +874,6 @@ MonoBehaviour:
   ObjListCount: 0
   powerSourceOb:
   - {fileID: 684905737}
-  telaportPanelOne: {fileID: 1797088075}
-  telaportPanelTwo: {fileID: 1689291546}
 --- !u!4 &1790278764
 Transform:
   m_ObjectHideFlags: 0
@@ -1390,7 +1392,7 @@ GameObject:
   - component: {fileID: 2134845376}
   m_Layer: 0
   m_Name: Laser Obsticl
-  m_TagString: Laser
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
