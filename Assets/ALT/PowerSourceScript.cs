@@ -32,6 +32,7 @@ public class PowerSourceScript : MonoBehaviour
     [SerializeField]
     private PowerSourceData powSoData;                      // Power source data
 
+    public Vector2 StartPos => startPos;
 
     #endregion
 
@@ -92,48 +93,48 @@ public class PowerSourceScript : MonoBehaviour
 
     #region Functionality
     // Is moving
-    bool GetIsMoving()
+    public bool GetIsMoving()
     {
         // Get is moving
         return isMoving;
     }
-    void SetIsMoving(bool set_state)
+    public void SetIsMoving(bool set_state)
     {
         // Set is moving
          isMoving = set_state;
     }
 
     // Can teleport
-    bool GetCanTeleport()
+    public bool GetCanTeleport()
     {
         // Get can teleport
         return canTeleport;
     }
-    void SetCanTeleport(bool set_state)
+    public void SetCanTeleport(bool set_state)
     {
         // Set is can teleport
         canTeleport = set_state;
     }
 
     // In correct place
-    bool GetinCorectPlace()
+    public bool GetinCorectPlace()
     {
         // Get in correct place
         return inCorectPlace;
     }
-    void SetInCorectPlace(bool set_state)
+    public void SetInCorectPlace(bool set_state)
     {
         // Set in correct place
         inCorectPlace = set_state;
     }
 
     // Health
-    int GetHealth()
+    public int GetHealth()
     {
         // Get Health
         return helth;
     }
-    void SetDamHealth(int dam_amount)
+    public void SetDamHealth(int dam_amount)
     {
         // Set the health damage
         helth -= dam_amount;
@@ -142,7 +143,7 @@ public class PowerSourceScript : MonoBehaviour
             helth = 0;
     }
     // Got hit by player's laser
-    void GotHitByPlayer()
+    public void GotHitByPlayer()
     {
         // Set the health damage
         SetDamHealth(powSoData.healthDamageFromPlayer);
@@ -152,19 +153,19 @@ public class PowerSourceScript : MonoBehaviour
 
 
     #region Reseters
-    void ResetPos()
+    public void ResetPos()
     {
         // Reset pos
         transform.position = startPos;
     }
 
-    void ResetHealth()
+    public void ResetHealth()
     {
         // Reset health
         helth = powSoData.health;
     }
 
-    void ResetAll()
+    public void ResetAll()
     {
         // Rest all
         ResetPos();
