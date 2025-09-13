@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: df192d450a0b22740baf120cb030a837
+guid: f9d4579e00dae9f409cf83ec10ee04e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 199249360466117110
-    second: Floor_0
+      213: 1768754613369207567
+    second: TeleportPads_0
+  - first:
+      213: -1740797858299709725
+    second: TeleportPads_1
+  - first:
+      213: 6772153496041732110
+    second: TeleportPads_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +119,29 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floor_0
+      name: TeleportPads_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b74b813f0eb8810800000000000000
+      internalID: 1768754613369207567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TeleportPads_1
       rect:
         serializedVersion: 2
         x: 0
@@ -128,58 +156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f18e48dc30e3c200800000000000000
-      internalID: 199249360466117110
+      spriteID: 3e6f84e229177d7e0800000000000000
+      internalID: -1740797858299709725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 04ba990df5121a54691fffd50c7276b8
-      internalID: 1510517633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88a1b6bd388530f4aa38bf1012f5083f
-      internalID: 390425120
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_3
+      name: TeleportPads_2
       rect:
         serializedVersion: 2
         x: 0
@@ -192,60 +176,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f2b0f606f34187248bad7a792e47ab42
-      internalID: 979756902
+      spriteID: e08bcf769b58bfd50800000000000000
+      internalID: 6772153496041732110
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_4
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f79db451b961ffd409bfcc5df5744d37
-      internalID: -1124697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1999ba71a9fb8744a9616aa98234fb92
-      internalID: 1039885605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_6
+      name: TeleportPads_3
       rect:
         serializedVersion: 2
         x: 0
@@ -260,58 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b2aa47aee748844393bab04d5647b79
-      internalID: 1902194249
+      spriteID: 5c84f3831e66da94db511c60ac820c70
+      internalID: -2045177101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e18b26259e97d784bb04b4d08bf7814a
-      internalID: -1049804544
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_8
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce14627d0fa9cc246af7e80f1de9b51c
-      internalID: -775529437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_9
+      name: TeleportPads_4
       rect:
         serializedVersion: 2
         x: 0
@@ -326,30 +222,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 851c5dc9e82125e4cb263211ea6d04e1
-      internalID: -1033795468
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_10
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b5d8115624650db4ba7caed81383fab2
-      internalID: 692622683
+      spriteID: 5733219f1491a6a46ae28908ee22424a
+      internalID: -277160400
       vertices: []
       indices: 
       edges: []
@@ -358,7 +232,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b2c8674870a7654e8ecdb285ab34f60
+    spriteID: 3ea1285f9682aa644b152c7422f39725
     internalID: 0
     vertices: []
     indices: 
@@ -370,17 +244,11 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Floor_0: 199249360466117110
-      Floor_1: 1510517633
-      Floor_10: 692622683
-      Floor_2: 390425120
-      Floor_3: 979756902
-      Floor_4: -1124697
-      Floor_5: 1039885605
-      Floor_6: 1902194249
-      Floor_7: -1049804544
-      Floor_8: -775529437
-      Floor_9: -1033795468
+      TeleportPads_0: 1768754613369207567
+      TeleportPads_1: -1740797858299709725
+      TeleportPads_2: 6772153496041732110
+      TeleportPads_3: -2045177101
+      TeleportPads_4: -277160400
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
