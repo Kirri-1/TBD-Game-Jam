@@ -12,7 +12,7 @@ public class PowerSourceScript : MonoBehaviour
 
     [Header("Bools")]
     [SerializeField]                                        
-    private bool isMoving = false;                          // Is moving
+    private bool isHolding = false;                         // Is holding the power cell
     [SerializeField]
     private bool canTeleport = false;                       // Can teleport 
     [SerializeField]
@@ -21,15 +21,15 @@ public class PowerSourceScript : MonoBehaviour
     private bool isRoated = false;                          // When the spirte is roated
 
 
-    [Header("Layeres")]
+    [Header("Game object places")]
     [SerializeField]
     private LayerMask toIgnoreLayers;                       // Ignoring layers
     [SerializeField]
-    private LayerMask corectPlaceLayer;                     // Correct Place layer
+    private GameObject corectPlace;                         // Correct Place
     [SerializeField]
-    private LayerMask teleportLayer;                        // Teleport layer
+    private List<GameObject> teleportObj;                   // Teleport pbjects
     [SerializeField]
-    private LayerMask obDamgeLayers;                        // Teleport layer
+    private List<GameObject> canDamgeObj;                   // Teleport layer
 
 
     [Header("External")]
@@ -43,49 +43,55 @@ public class PowerSourceScript : MonoBehaviour
         helth = powSoData.health;
     }
 
-    private void Start()
-    {
-        Physics2D.IgnoreLayerCollision(this.gameObject.layer, toIgnoreLayers.value);
-    }
-
-
     #region Detection checks
     // Triggers
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.layer == teleportLayer)
-            // Teleport
-            SetCanTeleport(true);
-
-
         // Corect place
-        if (collision.gameObject.layer == corectPlaceLayer)
+        if (collision.gameObject.GetInstanceID() == corectPlace.GetInstanceID())
             SetInCorectPlace(true);
 
-
-        // Obsticles that do damage
-        if (collision.gameObject.layer == obDamgeLayers)
+        else if (teleportObj != null)
         {
-            SetDamHealth(powSoData.healthDamageFromObj);
+            foreach (var telport in teleportObj)
+            {
+                if (collision.gameObject.GetInstanceID() == telport.GetInstanceID())
+                    // Teleport
+                    SetCanTeleport(true);
+            }
+        }
 
-            // Health gone
-            if (GetHealth() <= 0)
-                ResetAll();
+        if (canDamgeObj != null)
+        {
+            // Obsticles that do damage
+            foreach (var damagOb in canDamgeObj)
+            {
+                if (collision.gameObject.GetInstanceID() == damagOb.GetInstanceID())
+                {
+                    SetDamHealth(powSoData.healthDamageFromObj);
+
+                    // Health gone
+                    if (GetHealth() <= 0)
+                        ResetAll();
+                }
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-
-        // Teleport
-        if (collision.gameObject.layer == teleportLayer)
-            SetCanTeleport(false);
-
-
         // Corect place to set
-        if (collision.gameObject.layer == corectPlaceLayer)
+        if (collision.gameObject.GetInstanceID() == corectPlace.GetInstanceID())
             SetInCorectPlace(false);
+
+        else if (teleportObj != null)
+        {
+            foreach (var telport in teleportObj)
+            {
+                if (collision.gameObject.GetInstanceID() == telport.GetInstanceID())
+                    // Teleport
+                    SetCanTeleport(false);
+            }
+        }
     }
 
     #endregion
@@ -93,61 +99,61 @@ public class PowerSourceScript : MonoBehaviour
 
     #region Functionality
     // Get the power source data
-    PowerSourceData GetPowerSourceData()
+    public PowerSourceData GetPowerSourceData()
     {
         return powSoData;
     }
 
 
     // Is moving
-    bool GetIsMoving()
+    public bool GetIsMoving()
     {
         // Get is moving
-        return isMoving;
+        return isHolding;
     }
-    void SetIsMoving(bool set_state)
+    public void SetIsMoving(bool set_state)
     {
         // Set is moving
-         isMoving = set_state;
+         isHolding = set_state;
     }
 
     // Teleport
-    bool GetCanTeleport()
+    public bool GetCanTeleport()
     {
         // Get can teleport
         return canTeleport;
     }
-    void SetCanTeleport(bool set_state)
+    public void SetCanTeleport(bool set_state)
     {
         // Set is can teleport
         canTeleport = set_state;
     }
 
-    bool getIsRoatedObj()
+    public bool GetIsRoatedObj()
     {
         return isRoated;
     }
 
 
     // In correct place
-    bool GetinCorectPlace()
+    public bool GetinCorectPlace()
     {
         // Get in correct place
         return inCorectPlace;
     }
-    void SetInCorectPlace(bool set_state)
+    public void SetInCorectPlace(bool set_state)
     {
         // Set in correct place
         inCorectPlace = set_state;
     }
 
     // Health
-    int GetHealth()
+    public int GetHealth()
     {
         // Get Health
         return helth;
     }
-    void SetDamHealth(int dam_amount)
+    public void SetDamHealth(int dam_amount)
     {
         // Set the health damage
         helth -= dam_amount;
@@ -157,7 +163,7 @@ public class PowerSourceScript : MonoBehaviour
     }
 
     // Got hit by player's laser
-    void GotHitByPlayer()
+    public void GotHitByPlayer()
     {
         // Set the health damage
         SetDamHealth(powSoData.healthDamageFromPlayer);
@@ -167,19 +173,19 @@ public class PowerSourceScript : MonoBehaviour
 
 
     #region Reseters
-    void ResetPos()
+    public void ResetPos()
     {
         // Reset pos
         transform.position = startPos;
     }
 
-    void ResetHealth()
+    public void ResetHealth()
     {
         // Reset health
         helth = powSoData.health;
     }
 
-    void ResetAll()
+    public void ResetAll()
     {
         // Rest all
         ResetPos();
