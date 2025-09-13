@@ -32,6 +32,7 @@ public class PowerSourceScript : MonoBehaviour
     [SerializeField]
     private PowerSourceData powSoData;                      // Power source data
 
+    public Vector2 StartPos => startPos;
 
     #endregion
 
