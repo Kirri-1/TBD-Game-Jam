@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "PowerSourceData", menuName = "Scriptable Objects/helth")]
-public class PowerSourceData : ScriptableObject
+public class PowerCellData : ScriptableObject
 {
     public int health = 0;
     public int healthDamageFromObj = 0;

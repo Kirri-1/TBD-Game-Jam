@@ -392,6 +392,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerSource
   startPos: {x: 0, y: 0, z: 0}
   helth: 0
+  normalSpr: {fileID: -1282270518, guid: df192d450a0b22740baf120cb030a837, type: 3}
+  roatedSpr: {fileID: 692622683, guid: df192d450a0b22740baf120cb030a837, type: 3}
   isHolding: 0
   canTeleport: 0
   inCorectPlace: 0
@@ -403,6 +405,7 @@ MonoBehaviour:
   teleportObj:
   - {fileID: 1797088073}
   - {fileID: 1689291544}
+  teleportObjColID: 0
   canDamgeObj:
   - {fileID: 2134845373}
   powSoData: {fileID: 11400000, guid: 4cd729ca707f24f84891fc7716aaf711, type: 2}
@@ -422,7 +425,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 4
+    m_Bits: 0
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2

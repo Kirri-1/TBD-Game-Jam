@@ -54,7 +54,7 @@ public class OnBreak : MonoBehaviour
 
         DebugHelper.InfoLogger("Trigger initiated, object has the tag \"Cell \"", this, "HandleTrigger() => collider.CompareTag(\"Cell\")", collider.gameObject, true);
 
-        PowerSourceScript powerSource = collider.gameObject.GetComponent<PowerSourceScript>();
+        PowerCellScript powerSource = collider.gameObject.GetComponent<PowerCellScript>();
 
         Vector2 currentPos = powerSource.gameObject.transform.position;
 
@@ -66,7 +66,7 @@ public class OnBreak : MonoBehaviour
 
         if (powerSource == null)
         {
-            DebugHelper.CriticalNullReferenceLogger(this, typeof(PowerSourceScript), "HandleTrigger() =>", "PowerSourceScript powerSource = collider.GetComponent<PowerSourceScript>();",
+            DebugHelper.CriticalNullReferenceLogger(this, typeof(PowerCellScript), "HandleTrigger() =>", "PowerSourceScript powerSource = collider.GetComponent<PowerSourceScript>();",
                 collider.gameObject, powerSource != null);
             return;
         }
