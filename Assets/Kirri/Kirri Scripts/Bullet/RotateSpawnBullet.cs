@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class RotateSpawnBullet : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
     private Transform[] m_spawnTransforms;
+    #endregion
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,6 +17,7 @@ public class RotateSpawnBullet : MonoBehaviour
         HandleRotation();
     }
 
+    #region HandleRotation
     void HandleRotation()
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey("left"))
@@ -38,4 +41,5 @@ public class RotateSpawnBullet : MonoBehaviour
             transform.rotation = m_spawnTransforms[3].rotation;
         }
     }
+    #endregion
 }
