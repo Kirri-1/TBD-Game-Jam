@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Bullet
+  - Cell
+  - Wall
+  - Ice
+  - Breakables
   layers:
   - Default
   - TransparentFX
@@ -12,9 +17,9 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Bullet
+  - Cell
+  - Player
   - 
   - 
   - 
