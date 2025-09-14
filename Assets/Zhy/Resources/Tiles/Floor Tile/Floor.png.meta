@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,8 +116,8 @@ TextureImporter:
       name: Floor_0
       rect:
         serializedVersion: 2
-        x: 32
-        y: 160
+        x: 0
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -138,8 +138,8 @@ TextureImporter:
       name: Floor_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 160
+        x: 32
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -160,8 +160,8 @@ TextureImporter:
       name: Floor_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 160
+        x: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -182,8 +182,8 @@ TextureImporter:
       name: Floor_3
       rect:
         serializedVersion: 2
-        x: 32
-        y: 128
+        x: 0
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -204,8 +204,8 @@ TextureImporter:
       name: Floor_4
       rect:
         serializedVersion: 2
-        x: 64
-        y: 128
+        x: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -226,8 +226,8 @@ TextureImporter:
       name: Floor_5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 128
+        x: 64
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -248,8 +248,8 @@ TextureImporter:
       name: Floor_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -270,8 +270,8 @@ TextureImporter:
       name: Floor_7
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 32
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -292,8 +292,8 @@ TextureImporter:
       name: Floor_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
+        x: 64
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -314,8 +314,8 @@ TextureImporter:
       name: Floor_9
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 0
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -336,8 +336,8 @@ TextureImporter:
       name: Floor_10
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 32
+        y: 0
         width: 32
         height: 32
       alignment: 0
@@ -350,94 +350,6 @@ TextureImporter:
       bones: []
       spriteID: b5d8115624650db4ba7caed81383fab2
       internalID: 692622683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_11
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff8317ac67ecaa144a7c31c9b6dd4323
-      internalID: -1282270518
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_12
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 793a8c4ed3766a4459133f7fdc8b1c9f
-      internalID: 655191106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_13
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 890d1967a816059489c394ae84580a0e
-      internalID: 158951330
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Floor_14
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 32
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 336e61e534b76054e828766fef655c4d
-      internalID: -2138524228
       vertices: []
       indices: 
       edges: []
@@ -461,10 +373,6 @@ TextureImporter:
       Floor_0: 199249360466117110
       Floor_1: 1510517633
       Floor_10: 692622683
-      Floor_11: -1282270518
-      Floor_12: 655191106
-      Floor_13: 158951330
-      Floor_14: -2138524228
       Floor_2: 390425120
       Floor_3: 979756902
       Floor_4: -1124697

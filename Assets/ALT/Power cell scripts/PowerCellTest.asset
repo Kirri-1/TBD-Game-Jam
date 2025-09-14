@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2bc638d581614a73a18a0ea866e3b89, type: 3}
-  m_Name: DefaultPowerSorce
+  m_Name: PowerCellTest
   m_EditorClassIdentifier: Assembly-CSharp::PowerSourceData
   health: 5
-  healthDamage: 1
+  healthDamageFromObj: 1
+  healthDamageFromPlayer: 5
+  telpoRotate: 1
