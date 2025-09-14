@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Kirri/Kirri Scenes/Pause/Pause.unity
     guid: 63c63958c5f2fd5498cb98765ac2cbf6
   - enabled: 1
-    path: Assets/Kirri/Kirri Scenes/Death.unity
+    path: Assets/Kirri/Kirri Scenes/Death Scene/Death.unity
     guid: de55d5a620fa7fc4b971a47e824bceca
   - enabled: 1
     path: Assets/Kirri/Kirri Scenes/Kirri Dev Scene.unity

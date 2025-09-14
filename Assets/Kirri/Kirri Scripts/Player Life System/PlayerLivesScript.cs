@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLivesScript : MonoBehaviour
 {
@@ -31,6 +32,13 @@ public class PlayerLivesScript : MonoBehaviour
 #endif
     }
     #endregion
+
+    private void Update()
+    {
+        if (m_playerLivesSO.currentLives != 0)
+            return;
+        OnDeath();
+    }
 
     #region Lose Life
     public void LoseLife()
@@ -83,6 +91,13 @@ public class PlayerLivesScript : MonoBehaviour
             return;
         }
         m_playerLivesSO.currentLives = m_playerLivesSO.maxLives;
+    }
+    #endregion
+
+    #region OnDeath
+    private void OnDeath()
+    {
+        SceneManager.LoadScene("Death Scene", LoadSceneMode.Single);  
     }
     #endregion
 
