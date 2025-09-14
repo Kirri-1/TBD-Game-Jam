@@ -32,19 +32,15 @@ public class PowerCellScript : MonoBehaviour
     #endregion
 
 
-    private void Start()
+    public void SetPowerCellInfo(PowerCellInfo PowInfo)
     {
+        powerInfo = PowInfo;
+
         startPos = transform.position;
         helth = powerInfo.GetPowerCellData.health;
 
         this.gameObject.GetComponent<SpriteRenderer>().sprite = powerInfo.GetNormalSpr;
         this.gameObject.GetComponent<BoxCollider2D>().excludeLayers = powerInfo.GetLayerToIgnore;
-    }
-
-
-    public void SetPowerCellInfo(PowerCellInfo PowInfo)
-    {
-        powerInfo = PowInfo;
     }
 
     // Get the power cell data
@@ -121,11 +117,11 @@ public class PowerCellScript : MonoBehaviour
 
 
     #region Get set
-    // Start postion
-    public Vector2 StartPos => startPos;
-
     // Set is holding
     public bool GetIsHolding { get { return isHolding; } set { isHolding = value; } }
+
+    // Start postion
+    public Vector2 StartPos => startPos;
 
     // In correct place get
     public bool GetInCorectPlace { get { return inCorectPlace; }}
