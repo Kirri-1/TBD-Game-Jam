@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class SlidingOnIce : MonoBehaviour
+public class SlidingOnIce : MonoBehaviour //scrapped
 {
     PlayerMovement m_playerMovement;
     private Vector2 m_slideDirection;
