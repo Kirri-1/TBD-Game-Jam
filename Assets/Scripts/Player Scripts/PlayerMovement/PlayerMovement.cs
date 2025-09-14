@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private float m_timeToMove = 0.2f;
     [SerializeField]
     private LayerMask m_collision;
+    public bool isSliding;
+    public Vector2 LastMovementDirection;
     #endregion
 
     #region Start
@@ -32,7 +34,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Movement();
+        if (!isSliding)
+        {
+            Movement();
+        }
     }
 
     #region Movement
@@ -41,17 +46,17 @@ public class PlayerMovement : MonoBehaviour
         if (m_isMoving)
             return;
 
-            float horizontal = Input.GetAxisRaw("Horizontal");
-            float vertical = Input.GetAxisRaw("Vertical");
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-            if (horizontal != 0)
-            {
-                StartCoroutine(MovePlayer(new Vector2(horizontal, 0)));
-            }
-            else if (vertical != 0)
-            {
-                StartCoroutine(MovePlayer(new Vector2(0, vertical)));
-            }
+        if (horizontal != 0)
+        {
+            StartCoroutine(MovePlayer(new Vector2(horizontal, 0)));
+        }
+        else if (vertical != 0)
+        {
+            StartCoroutine(MovePlayer(new Vector2(0, vertical)));
+        }
     }
     #endregion
 
@@ -59,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator MovePlayer(Vector2 direction)
     {
         m_isMoving = true;
+        LastMovementDirection = direction;
 
         Vector2 startPos = m_playerRb.position;
         Vector2 targetPos = startPos + direction;
@@ -82,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         m_playerRb.MovePosition(targetPos);
 
         m_isMoving = false;
+
     }
     #endregion
 }
