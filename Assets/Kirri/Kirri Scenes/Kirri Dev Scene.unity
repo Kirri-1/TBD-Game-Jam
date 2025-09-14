@@ -1916,6 +1916,7 @@ GameObject:
   - component: {fileID: 1661966628}
   - component: {fileID: 1661966629}
   - component: {fileID: 1661966630}
+  - component: {fileID: 1661966631}
   m_Layer: 8
   m_Name: player_right_0
   m_TagString: Player
@@ -2158,6 +2159,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlidingOnIce
   m_iceSpeed: 15
+--- !u!114 &1661966631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661966622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3882f93d9dad6b648bee22a1da759d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pause
+  pauseMenu: {fileID: 0}
 --- !u!1 &1814741045
 GameObject:
   m_ObjectHideFlags: 0

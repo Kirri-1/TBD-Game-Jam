@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Play : MonoBehaviour
 {
     Button button;
+    string thisScene = "Main Menu";
+    Scene nextScene;
     private void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
@@ -19,6 +22,34 @@ public class Play : MonoBehaviour
 
     private void OnButtonClicked()
     {
-        SceneManager.LoadScene("Kirri Dev Scene");
+        //SceneManager.LoadScene("Level 1");
+
+        StartCoroutine(UnloadMainScene());
+    }
+
+    private IEnumerator UnloadMainScene()
+    {
+        AsyncOperation loadDevScene = SceneManager.LoadSceneAsync("Kirri Dev Scene", LoadSceneMode.Additive);
+        yield return loadDevScene;
+
+
+        nextScene = SceneManager.GetSceneByName("Kirri Dev Scene");
+        SceneManager.SetActiveScene(nextScene);
+
+        AsyncOperation loadPauseScene = SceneManager.LoadSceneAsync("Pause", LoadSceneMode.Additive);
+        yield return loadPauseScene;
+
+        Scene scene = SceneManager.GetSceneByName("Pause");
+        if (scene.isLoaded)
+        {
+            foreach (var rootObj in scene.GetRootGameObjects())
+            {
+                rootObj.SetActive(false);
+            }
+        }
+
+
+        AsyncOperation unloadMenuScreen = SceneManager.UnloadSceneAsync("Main Menu");
+        yield return unloadMenuScreen;
     }
 }
