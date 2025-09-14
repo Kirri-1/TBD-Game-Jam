@@ -24,7 +24,7 @@ public class PowerCellScript : MonoBehaviour
     private bool isRoated = false;                          // When the spirte is roated
 
 
-    [Header("Game object places")]
+    [Header("Game object acations")]
     [SerializeField]
     private LayerMask toIgnoreLayers;                       // Ignoring layers
 
@@ -176,21 +176,24 @@ public class PowerCellScript : MonoBehaviour
                     // Set pos
                     this.transform.position = teleportObj[array_point].transform.position;
 
-                    // Change sprite
-                    Sprite set_sprite = roatedSpr;
 
-                    // Is sprite is roated
-                    if (!isRoated && this.GetComponent<SpriteRenderer>().sprite == normalSpr)
-                        isRoated = true;
-                    else
+                    if (powSoData.telpoRotate)
                     {
-                        isRoated = false;
-                        set_sprite = normalSpr;
+                        // Change sprite
+                        Sprite set_sprite = roatedSpr;
+
+                        // Is sprite is roated
+                        if (!isRoated && this.GetComponent<SpriteRenderer>().sprite == normalSpr)
+                            isRoated = true;
+                        else
+                        {
+                            isRoated = false;
+                            set_sprite = normalSpr;
+                        }
+
+                        // Change sprite
+                        this.GetComponent<SpriteRenderer>().sprite = set_sprite;
                     }
-
-
-                    // Change sprite
-                    this.GetComponent<SpriteRenderer>().sprite = set_sprite;
 
                     break;
                 }
