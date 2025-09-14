@@ -4,11 +4,15 @@ public class PlayerContolerScripts : MonoBehaviour
 {
     [SerializeField]
     private bool isMoving = false;
+    [SerializeField]
+    private Animator animator;
+
 
     public float moveSpeed = 5;
     public Transform movePoint;
     public float gridOffset = 0.5f;
     public LayerMask colidables;
+    private int LastFaceDirection = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +27,23 @@ public class PlayerContolerScripts : MonoBehaviour
         // get input
         float xInput = Input.GetAxisRaw("Horizontal");
         float yInput = Input.GetAxisRaw("Vertical");
+
+        animator.SetFloat("Horizontal", xInput);
+        animator.SetFloat("Vertical", yInput);
+        animator.SetFloat("Speed", new Vector2(xInput, yInput).sqrMagnitude);
+        
+        if (xInput != 0 || yInput != 0)
+        {
+            if (Mathf.Abs(xInput) == 1f)
+            {
+                LastFaceDirection = (int)xInput;
+            }
+            if (Mathf.Abs(yInput) == 1f)
+            {
+                LastFaceDirection = (int)yInput * 2;
+            }
+        }
+        animator.SetFloat("LastFaceDirection", LastFaceDirection);
 
         // Move the postion of the player
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
