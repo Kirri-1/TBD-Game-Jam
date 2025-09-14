@@ -1,0 +1,22 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Kirri/Kirri%20Scenes/Sample.uss?fileID=7433441132597879392&amp;guid=52b162db0960a81428216d89b1c161f4&amp;type=3#Sample" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; height: 318px; width: 100%;">
+            <ui:Label text="Pause" style="height: 310px; width: 50%; left: 25%; font-size: 50px; color: rgb(30, 192, 255); flex-grow: 0; -unity-text-align: middle-center; border-left-color: rgba(0, 205, 255, 0.41); border-right-color: rgba(0, 205, 255, 0.41); border-top-color: rgba(0, 205, 255, 0.41); border-bottom-color: rgba(0, 205, 255, 0.41); border-top-width: 20px; border-right-width: 20px; border-bottom-width: 20px; border-left-width: 20px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; height: 294px; width: 100%;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
+                <ui:Button text="Button" name="Resume" class="button-blue buttone-blue" style="width: 40%; left: 30%; background-color: rgba(6, 128, 255, 0); color: rgba(27, 27, 27, 0); top: 25%; height: 45%;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: resource(&apos;UI Buttons/ButtonText3&apos;);" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; height: 294px; width: 100%;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
+                <ui:Button text="Button" name="Quit" class="button-blue buttone-blue" style="width: 40%; left: 30%; background-color: rgba(6, 128, 255, 0); color: rgba(27, 27, 27, 0); top: 25%; height: 45%;">
+                    <ui:VisualElement style="flex-grow: 1; background-image: resource(&apos;UI Buttons/ButtonText2&apos;); width: auto;" />
+                </ui:Button>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

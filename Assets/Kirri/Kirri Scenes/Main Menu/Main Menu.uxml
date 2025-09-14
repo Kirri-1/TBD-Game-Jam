@@ -1,13 +1,17 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Kirri/Kirri%20Scenes/Sample.uss?fileID=7433441132597879392&amp;guid=52b162db0960a81428216d89b1c161f4&amp;type=3#Sample" />
     <ui:VisualElement name="VisualElement" style="flex-grow: 1; -unity-background-image-tint-color: rgb(0, 0, 0); background-size: 100% 100%; width: 100%; height: 100%; background-color: rgba(255, 0, 0, 0);">
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 100%; height: 403px; background-color: rgba(255, 0, 0, 0); flex-shrink: 0; flex-direction: row; align-items: flex-end; justify-content: space-around;">
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 100%; height: 50%; background-color: rgba(255, 0, 0, 0); flex-shrink: 0; flex-direction: row; align-items: flex-end; justify-content: space-around;">
             <ui:Label text="Fix Power (rename)" name="Title" style="width: 1360px; align-self: center; font-size: 80px; color: rgb(255, 255, 255); -unity-text-align: upper-center; border-left-color: rgb(221, 24, 190); border-right-color: rgb(221, 24, 190); border-top-color: rgb(221, 24, 190); border-bottom-color: rgb(221, 24, 190); border-top-width: 20px; border-right-width: 20px; border-bottom-width: 20px; border-left-width: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px;" />
         </ui:VisualElement>
-        <ui:Button text="Play" name="Play" class="button-blue buttone-blue" style="width: 50%; justify-content: flex-start; align-self: center;" />
+        <ui:Button text="Play" name="Play" class="button-blue buttone-blue" style="width: 50%; justify-content: flex-start; align-self: center; background-color: rgba(6, 128, 255, 0); color: rgba(27, 27, 27, 0); height: 143px;">
+            <ui:VisualElement style="flex-grow: 1; background-image: resource(&apos;UI Buttons/ButtonText1&apos;); width: 100%; height: 100%;" />
+        </ui:Button>
         <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 100%; height: 112px; background-color: rgba(255, 0, 0, 0); flex-shrink: 0; flex-direction: row; align-items: flex-end; justify-content: space-around;" />
-        <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 100%; height: 112px; background-color: rgba(255, 0, 0, 0); flex-shrink: 0; flex-direction: row; align-items: flex-end; justify-content: space-around;">
-            <ui:Button text="Quit" name="Quit" class="button-blue buttone-blue" style="width: 50%;" />
+        <ui:VisualElement name="VisualElement" style="flex-grow: 0; width: 50%; height: 112px; background-color: rgba(255, 0, 0, 0); flex-shrink: 0; flex-direction: row; align-items: flex-end; justify-content: space-around; transform-origin: center;">
+            <ui:Button text="Quit" name="Quit" class="button-blue buttone-blue" style="width: 960px; background-color: rgba(6, 128, 255, 0); color: rgba(27, 27, 27, 0); white-space: pre; -unity-text-align: upper-center; flex-direction: row; right: auto; left: 50%; height: 158px;">
+                <ui:VisualElement style="flex-grow: 1; width: 706px; height: 155px; background-image: resource(&apos;UI Buttons/ButtonText2&apos;);" />
+            </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
