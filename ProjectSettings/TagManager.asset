@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Cell
   - Wall
+  - Ice
+  - Breakables
   layers:
   - Default
   - TransparentFX
