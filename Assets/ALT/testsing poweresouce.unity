@@ -372,7 +372,7 @@ GameObject:
   - component: {fileID: 684905738}
   - component: {fileID: 684905742}
   m_Layer: 0
-  m_Name: Power source
+  m_Name: Power cell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -392,23 +392,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerSource
   startPos: {x: 0, y: 0, z: 0}
   helth: 0
-  normalSpr: {fileID: -1282270518, guid: df192d450a0b22740baf120cb030a837, type: 3}
-  roatedSpr: {fileID: 692622683, guid: df192d450a0b22740baf120cb030a837, type: 3}
   isHolding: 0
   canTeleport: 0
   inCorectPlace: 0
   isRoated: 0
-  toIgnoreLayers:
-    serializedVersion: 2
-    m_Bits: 4
-  corectPlace: {fileID: 1982505185}
-  teleportObj:
-  - {fileID: 1797088073}
-  - {fileID: 1689291544}
   teleportObjColID: 0
-  canDamgeObj:
-  - {fileID: 2134845373}
-  powSoData: {fileID: 11400000, guid: 4cd729ca707f24f84891fc7716aaf711, type: 2}
+  powerInfo:
+    normalSpr: {fileID: 0}
+    roatedSpr: {fileID: 0}
+    powerCellData: {fileID: 0}
+    toIgnoreLayers:
+      serializedVersion: 2
+      m_Bits: 0
+    corectPlace: {fileID: 0}
+    canGetDamgeObj: []
+    teleportObj: []
 --- !u!61 &684905739
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -872,9 +870,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39f7ce86c1b7f40cea9a25f883badcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerSourceManger
-  ObjListCount: 0
-  powerSourceOb:
-  - {fileID: 684905737}
+  powerCellOb:
+  - {fileID: 684905738}
+  powerCellInfo:
+  - normalSpr: {fileID: -1282270518, guid: df192d450a0b22740baf120cb030a837, type: 3}
+    roatedSpr: {fileID: 692622683, guid: df192d450a0b22740baf120cb030a837, type: 3}
+    powerCellData: {fileID: 11400000, guid: 4cd729ca707f24f84891fc7716aaf711, type: 2}
+    toIgnoreLayers:
+      serializedVersion: 2
+      m_Bits: 4
+    corectPlace: {fileID: 1982505185}
+    canGetDamgeObj:
+    - {fileID: 2134845373}
+    teleportObj:
+    - {fileID: 1797088073}
+    - {fileID: 1689291544}
 --- !u!4 &1790278764
 Transform:
   m_ObjectHideFlags: 0

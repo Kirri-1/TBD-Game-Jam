@@ -1,21 +1,30 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class PowerSourceManger : MonoBehaviour
+public class PowerCellManger : MonoBehaviour
 {
     [SerializeField]
-    private int ObjListCount = 0;
+    private List<PowerCellScript> powerCellOb = new();
 
     [SerializeField]
-    protected List<GameObject> powerSourceOb = new();
+    private List<PowerCellInfo> powerCellInfo = new();
 
-    void Start()
+
+    private void Awake()
     {
-        ObjListCount = powerSourceOb.Count;
+        for(int i = 0; i < powerCellOb.Count; i++)
+        {
+            powerCellOb[i].SetPowerCellInfo(powerCellInfo[i]);
+        }
     }
 
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+            powerCellOb[0].TeleportPowerCell();
     }
+
+    // Getters
+    public List<PowerCellScript> GetPowerCellScript => powerCellOb;
+    public List<PowerCellInfo> GetPowerCellInfo => powerCellInfo;
 }

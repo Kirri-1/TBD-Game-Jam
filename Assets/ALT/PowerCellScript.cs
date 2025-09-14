@@ -1,16 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
 public class PowerCellScript : MonoBehaviour
 {
     #region Verbals
     [SerializeField]
-    protected Vector3 startPos = Vector3.zero;              // Starting postion
+    private Vector3 startPos = Vector3.zero;              // Starting postion
     [SerializeField]
-    protected int helth = 0;                                // Health
-    // Sprites
-    [SerializeField]
-    private Sprite normalSpr = null, roatedSpr = null;       // Current sprite and roated sprites
+    private int helth = 0;                                // Health
 
 
     [Header("Bools")]
@@ -23,46 +21,34 @@ public class PowerCellScript : MonoBehaviour
     [SerializeField]
     private bool isRoated = false;                          // When the spirte is roated
 
-
-    [Header("Game object acations")]
-    [SerializeField]
-    private LayerMask toIgnoreLayers;                       // Ignoring layers
-
-    [SerializeField]
-    private GameObject corectPlace = null;                  // Correct Place
-
-    [SerializeField]
-    private List<GameObject> teleportObj = new();           // Teleport objects
+    [Space(10)]
     [SerializeField]
     private int teleportObjColID = 0;                       // Teleport object collied ID
 
+    // Power cell info
+    [Space(10)]
     [SerializeField]
-    private List<GameObject> canDamgeObj = new();           // Object that do damge
-
-    [Header("External")]
-    [SerializeField]
-    private PowerCellData powSoData = null;                 // Power cell data
+    private PowerCellInfo powerInfo = new();
     #endregion
 
-    private void Awake()
-    {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = normalSpr;
-
-        startPos = transform.position;
-        helth = powSoData.health;
-    }
 
     private void Start()
     {
-        this.gameObject.GetComponent<BoxCollider2D>().excludeLayers = toIgnoreLayers;
+        startPos = transform.position;
+        helth = powerInfo.GetPowerCellData.health;
+
+        this.gameObject.GetComponent<SpriteRenderer>().sprite = powerInfo.GetNormalSpr;
+        this.gameObject.GetComponent<BoxCollider2D>().excludeLayers = powerInfo.GetLayerToIgnore;
     }
 
 
-    private void Update()
+    public void SetPowerCellInfo(PowerCellInfo PowInfo)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-            TeleportPowerCell();
+        powerInfo = PowInfo;
     }
+
+    // Get the power cell data
+    public PowerCellData GetPowerSourceData => powerInfo.GetPowerCellData;
 
 
     #region Detection checks
@@ -70,17 +56,17 @@ public class PowerCellScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D coll)
     {
         // Corect place
-        if (coll.gameObject.GetInstanceID() == corectPlace.GetInstanceID())
+        if (coll.gameObject.GetInstanceID() == powerInfo.GetCorectPlace.GetInstanceID())
             inCorectPlace = true;
 
-        else if (teleportObj.Count > 0)
+        else if (powerInfo.GetTeleportObjs.Count > 0)
         {
-            for (var i = 0; i < teleportObj.Count; i++)
+            for (var i = 0; i < powerInfo.GetTeleportObjs.Count; i++)
             {
-                if (coll.gameObject.GetInstanceID() == teleportObj[i].GetInstanceID())
+                if (coll.gameObject.GetInstanceID() == powerInfo.GetTeleportObjs[i].GetInstanceID())
                 {
                     // Get transp obj ID
-                    teleportObjColID = teleportObj[i].GetInstanceID();
+                    teleportObjColID = powerInfo.GetTeleportObjs[i].GetInstanceID();
 
                     // Teleport
                     canTeleport = true;
@@ -89,14 +75,14 @@ public class PowerCellScript : MonoBehaviour
             }
         }
 
-        if (canDamgeObj.Count > 0)
+        if (powerInfo.GetCanGetDamgeObj.Count > 0)
         {
             // Obsticles that do damage
-            foreach (var damagOb in canDamgeObj)
+            foreach (var damagOb in powerInfo.GetCanGetDamgeObj)
             {
                 if (coll.gameObject.GetInstanceID() == damagOb.GetInstanceID())
                 {
-                    SetDamHealth(powSoData.healthDamageFromObj);
+                    SetDamHealth(powerInfo.GetPowerCellData.healthDamageFromObj);
 
                     // Health gone
                     if (helth <= 0)
@@ -110,14 +96,14 @@ public class PowerCellScript : MonoBehaviour
     private void OnTriggerExit2D(Collider2D coll)
     {
         // Corect place to set
-        if (coll.gameObject.GetInstanceID() == corectPlace.GetInstanceID())
+        if (coll.gameObject.GetInstanceID() == powerInfo.GetCorectPlace.GetInstanceID())
             inCorectPlace = false;
 
-        else if (teleportObj.Count > 0)
+        else if (powerInfo.GetTeleportObjs.Count > 0)
         {
-            for (var i = 0; i < teleportObj.Count; i++)
+            for (var i = 0; i < powerInfo.GetTeleportObjs.Count; i++)
             {
-                if (coll.gameObject.GetInstanceID() == teleportObj[i].GetInstanceID())
+                if (coll.gameObject.GetInstanceID() == powerInfo.GetTeleportObjs[i].GetInstanceID())
                 {
                     // Reset transp obj ID
                     teleportObjColID = 0;
@@ -134,10 +120,6 @@ public class PowerCellScript : MonoBehaviour
     #endregion
 
 
-    // Get the power cell data
-    public PowerCellData GetPowerSourceData => powSoData;
-
-
     #region Get set
     // Start postion
     public Vector2 StartPos => startPos;
@@ -147,6 +129,29 @@ public class PowerCellScript : MonoBehaviour
 
     // In correct place get
     public bool GetInCorectPlace { get { return inCorectPlace; }}
+    #endregion
+
+    #region Holding
+    public void HoldPowerCell(Vector3 playerPos, MovingDir movingDir)
+    {
+        Vector3 setPos = Vector3.zero;
+
+        // Up
+        if (movingDir == MovingDir.up)
+            setPos = new Vector3(playerPos.x, playerPos.y + this.transform.localScale.y, 0);
+        //Down
+        else if (movingDir == MovingDir.down)
+            setPos = new Vector3(playerPos.x, playerPos.y - this.transform.localScale.y, 0);
+        // Left
+        else if (movingDir == MovingDir.left)
+            setPos = new Vector3(playerPos.x - this.transform.localScale.x, playerPos.y, 0);
+        // Right
+        else if (movingDir == MovingDir.right)
+            setPos = new Vector3(playerPos.x + this.transform.localScale.x, playerPos.y, 0);
+
+        this.transform.position = setPos;
+    }
+
     #endregion
 
 
@@ -162,33 +167,33 @@ public class PowerCellScript : MonoBehaviour
     {
         if (canTeleport)
         {
-            for (var i = 0; i < teleportObj.Count; i++)
+            for (var i = 0; i < powerInfo.GetTeleportObjs.Count; i++)
             {
                 // Check ID
-                if (teleportObjColID == teleportObj[i].GetInstanceID())
+                if (teleportObjColID == powerInfo.GetTeleportObjs[i].GetInstanceID())
                 {
                     int array_point =  i+1;
 
                     // Check if not max length
-                    if (i >= teleportObj.Count - 1)
+                    if (i >= powerInfo.GetTeleportObjs.Count - 1)
                         array_point = 0;
 
                     // Set pos
-                    this.transform.position = teleportObj[array_point].transform.position;
+                    this.transform.position = powerInfo.GetTeleportObjs[array_point].transform.position;
 
 
-                    if (powSoData.telpoRotate)
+                    if (powerInfo.GetPowerCellData.telpoRotate)
                     {
                         // Change sprite
-                        Sprite set_sprite = roatedSpr;
+                        Sprite set_sprite = powerInfo.GetRoatedSpr;
 
                         // Is sprite is roated
-                        if (!isRoated && this.GetComponent<SpriteRenderer>().sprite == normalSpr)
+                        if (!isRoated && this.GetComponent<SpriteRenderer>().sprite == powerInfo.GetNormalSpr)
                             isRoated = true;
                         else
                         {
                             isRoated = false;
-                            set_sprite = normalSpr;
+                            set_sprite = powerInfo.GetNormalSpr;
                         }
 
                         // Change sprite
@@ -220,7 +225,7 @@ public class PowerCellScript : MonoBehaviour
     public void GotHitByPlayer()
     {
         // Set the health damage
-        SetDamHealth(powSoData.healthDamageFromPlayer);
+        SetDamHealth(powerInfo.GetPowerCellData.healthDamageFromPlayer);
     }
 
     #endregion
@@ -236,7 +241,7 @@ public class PowerCellScript : MonoBehaviour
     public void ResetHealth()
     {
         // Reset health
-        helth = powSoData.health;
+        helth = powerInfo.GetPowerCellData.health;
     }
 
     public void ResetAll()
@@ -254,4 +259,12 @@ public class PowerCellScript : MonoBehaviour
         inCorectPlace = false;
     }
     #endregion
+}
+
+public enum MovingDir
+{
+    up = 0,
+    down = 1,
+    left = 2,
+    right = 3
 }
