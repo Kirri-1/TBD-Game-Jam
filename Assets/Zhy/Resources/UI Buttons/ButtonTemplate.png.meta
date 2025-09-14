@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 35d05c956bbd58c47aab0a9af6a4e271
+guid: 8c961f48c2d8bc84981bc8888533c5b8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -215066641710247946
-    second: TeleportPads1_0
+      213: 5335657698856794100
+    second: ButtonTemplate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TeleportPads1_0
+      name: ButtonTemplate_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 320
+        x: 13
+        y: 13
+        width: 70
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 7, y: 7, z: 7, w: 7}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ff03d1670ee30df0800000000000000
-      internalID: -215066641710247946
+      spriteID: 4f7ff6758601c0a40800000000000000
+      internalID: 5335657698856794100
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b183dea6bc73ff44d8e2fdf2b597d828
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TeleportPads1_0: -215066641710247946
+      ButtonTemplate_0: 5335657698856794100
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

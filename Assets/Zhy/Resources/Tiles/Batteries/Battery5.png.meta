@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 35d05c956bbd58c47aab0a9af6a4e271
+guid: 0d4f706f57212fe4f830b31e96259660
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -215066641710247946
-    second: TeleportPads1_0
+      213: -9011284640414167928
+    second: Battery5_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TeleportPads1_0
+      name: Battery5_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 320
+        x: 1
+        y: 5
+        width: 31
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ff03d1670ee30df0800000000000000
-      internalID: -215066641710247946
+      spriteID: 88c0e260d5c71f280800000000000000
+      internalID: -9011284640414167928
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TeleportPads1_0: -215066641710247946
+      Battery5_0: -9011284640414167928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

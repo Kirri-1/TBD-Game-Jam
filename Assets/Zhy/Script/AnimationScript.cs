@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class AnimationScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private Animator m_animator;
+    private PlayerMovement m_playerMovement;
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+
     }
+    
+
+    
 }
