@@ -9,11 +9,11 @@ using System.Collections;
 public class OnBreak : MonoBehaviour
 {
     #region Variables
-    [SerializeField]
-    private List<string> m_excludedTagsList = new List<string> { "Player", "Ground", "Wall", "Bullet", "Cell" };
 
     private HashSet<string> m_excludedTags;
 
+    [SerializeField]
+    private BulletGameManager m_bulletManager;
 
     [SerializeField]
     float m_timer = 0.5f;
@@ -21,7 +21,20 @@ public class OnBreak : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_excludedTags = new HashSet<string>(m_excludedTagsList);
+        m_bulletManager = GameObject.Find("Bullet Game Manager(Clone)").GetComponent<BulletGameManager>();
+        if (m_bulletManager == null)
+        {
+            DebugHelper.CriticalNullReferenceLogger(this, typeof(BulletGameManager), "Start() =>",
+                "m_bulletManager = GameObject.Find(\"Bullet Game Manager(Clone)\").GetComponent<BulletGameManager>();", gameObject, m_bulletManager != null);
+            return;
+        }
+        if (m_bulletManager.m_excludedTagsBreakables == null || m_bulletManager.m_excludedTagsBreakables.Count == 0)
+        {
+            DebugHelper.CriticalLogger("Excluded tags list is null!", this, "if (m_bulletManager.m_excludedTagsBreakables == null || m_bulletManager.m_excludedTagsBreakables.Count == 0)", gameObject);
+            return;
+        }
+        m_excludedTags = new HashSet<string>(m_bulletManager.m_excludedTagsBreakables);
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -71,6 +84,7 @@ public class OnBreak : MonoBehaviour
             return;
         }
         powerSource.ResetAll();
+        Destroy(gameObject);
 
         return;
     }
@@ -82,6 +96,7 @@ public class OnBreak : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         collider.gameObject.SetActive(false);
+        Destroy(gameObject);
     }
     #endregion
 }

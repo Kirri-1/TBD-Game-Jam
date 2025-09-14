@@ -393,6 +393,51 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &222991361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222991363}
+  - component: {fileID: 222991362}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &222991362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222991361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dd4c45c900f8b4eb42778e1ebd42ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  m_bulletManager: {fileID: 8030477728202577239, guid: 689912d372b23d04a9b930da5f9c19f7, type: 3}
+--- !u!4 &222991363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222991361}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.48246, y: -3.89266, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &532310681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,21 +1760,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PowerSourceScript
   startPos: {x: 0, y: 0, z: 0}
   helth: 0
-  isMoving: 0
+  isHolding: 0
   canTeleport: 0
   inCorectPlace: 0
+  isRoated: 0
   toIgnoreLayers:
     serializedVersion: 2
     m_Bits: 0
-  corectPlaceLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  teleportLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  obDamgeLayers:
-    serializedVersion: 2
-    m_Bits: 0
+  corectPlace: {fileID: 0}
+  teleportObj: []
+  canDamgeObj: []
   powSoData: {fileID: 11400000, guid: 4cd729ca707f24f84891fc7716aaf711, type: 2}
 --- !u!1 &1582134005
 GameObject:
@@ -2529,3 +2569,4 @@ SceneRoots:
   - {fileID: 969228513}
   - {fileID: 1540312097}
   - {fileID: 725793010}
+  - {fileID: 222991363}
