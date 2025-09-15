@@ -71,7 +71,7 @@ public class PlayerContolerScripts : MonoBehaviour
                     movePoint.position += new Vector3(xInput, 0f, 0f);
             }
 
-            if (Mathf.Abs(yInput) == 1f)
+            else if (Mathf.Abs(yInput) == 1f)
             {
                 if (yInput < 0)
                     addCellWith = -addCellWith;

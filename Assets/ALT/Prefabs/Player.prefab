@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 2837812869413721710}
   - component: {fileID: 730875936579082031}
   - component: {fileID: 1628773580492568810}
+  - component: {fileID: 5793338788809202845}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -111,11 +112,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 432246935
+  m_SortingLayer: 4
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.50060767, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b0f459d6a31cc06478d584c1b3262d1e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -190,7 +191,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -211,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerContolerScripts
   isMoving: 0
+  animator: {fileID: 5793338788809202845}
   isHoldingCell: 0
   moveSpeed: 5
   movePoint: {fileID: 2659237109672916433}
@@ -218,9 +220,27 @@ MonoBehaviour:
   colidables:
     serializedVersion: 2
     m_Bits: 640
-  pickableCell:
-    serializedVersion: 2
-    m_Bits: 128
   MovingDirEnms: 0
   pickUpPowerCellKey: 32
-  powerCell: {fileID: 0}
+--- !u!95 &5793338788809202845
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887514652061688657}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: -8096178915444821780, guid: 6f2e6710dfa036d4a825b1e80cac77ad, type: 3}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
