@@ -16,8 +16,8 @@ public class PowerCellScript : MonoBehaviour
     private bool isHolding = false;                         // Is holding the power cell
     [SerializeField]
     private bool canTeleport = false;                       // Can teleport 
-    [SerializeField]
-    private bool inCorectPlace = false;                     // In corect place
+
+    public bool inCorectPlace = false;                     // In corect place
     [SerializeField]
     private bool isRoated = false;                          // When the spirte is roated
     [SerializeField]
