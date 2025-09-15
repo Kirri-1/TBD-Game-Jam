@@ -26,7 +26,7 @@ public class Resume : MonoBehaviour
             Debug.LogError("Button 'Resume' not found in UXML!");
     }
 
-    private void ResumeGame()
+    public static void ResumeGame()
     {
         Time.timeScale = 1f;
         AudioListener.pause = false;

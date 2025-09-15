@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class DeathResume : MonoBehaviour
 {
     Button button;
-    private string deathScene = "Death Scene";
+    private string deathScene = "Death";
     private string currentScene;
     private void Start()
     {
@@ -29,7 +29,8 @@ public class DeathResume : MonoBehaviour
     }
     private IEnumerator ReloadScene()
     {
-        SceneManager.LoadScene(currentScene, LoadSceneMode.Single);
+        SceneManager.LoadSceneAsync(currentScene, LoadSceneMode.Additive);
+        yield return new WaitForSeconds(1.0f);
 
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentScene));
 
@@ -44,6 +45,7 @@ public class DeathResume : MonoBehaviour
                 rootObj.SetActive(false);
             }
         }
+
 
         AsyncOperation unloadDeathScene =  SceneManager.UnloadSceneAsync(deathScene);
         yield return unloadDeathScene;
