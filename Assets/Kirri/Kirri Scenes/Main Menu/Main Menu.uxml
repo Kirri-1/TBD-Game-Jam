@@ -14,4 +14,8 @@
             </ui:Button>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 284px; height: 10%;">
+        <ui:Label text="Credits:" style="height: 40px; color: rgb(255, 255, 255); font-size: 30px; width: 333px; bottom: 92px; top: -87px; left: 39px;" />
+        <ui:Label text="TR&#10;Kirri&#10;kyecas" style="height: 107px; color: rgb(255, 255, 255); font-size: 30px; width: 333px; bottom: 73px; left: 41px;" />
+    </ui:VisualElement>
 </ui:UXML>
