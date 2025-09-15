@@ -197,12 +197,12 @@ TextureImporter:
       name: PowerSourceSlot_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 0
         y: 96
-        width: 24
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: PowerSourceSlot_1
       rect:
         serializedVersion: 2
-        x: 4
-        y: 82
-        width: 24
-        height: 14
+        x: 32
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: PowerSourceSlot_2
       rect:
         serializedVersion: 2
-        x: 36
+        x: 64
         y: 96
-        width: 24
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,12 +263,12 @@ TextureImporter:
       name: PowerSourceSlot_3
       rect:
         serializedVersion: 2
-        x: 36
-        y: 82
-        width: 24
-        height: 14
+        x: 96
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -285,12 +285,12 @@ TextureImporter:
       name: PowerSourceSlot_4
       rect:
         serializedVersion: 2
-        x: 68
+        x: 128
         y: 96
-        width: 24
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: PowerSourceSlot_5
       rect:
         serializedVersion: 2
-        x: 68
-        y: 82
-        width: 24
-        height: 14
+        x: 0
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -329,12 +329,12 @@ TextureImporter:
       name: PowerSourceSlot_6
       rect:
         serializedVersion: 2
-        x: 100
-        y: 96
-        width: 24
+        x: 32
+        y: 64
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -351,12 +351,12 @@ TextureImporter:
       name: PowerSourceSlot_7
       rect:
         serializedVersion: 2
-        x: 100
-        y: 82
-        width: 24
-        height: 14
+        x: 64
+        y: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -373,12 +373,12 @@ TextureImporter:
       name: PowerSourceSlot_8
       rect:
         serializedVersion: 2
-        x: 132
-        y: 96
-        width: 24
+        x: 96
+        y: 64
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -395,12 +395,12 @@ TextureImporter:
       name: PowerSourceSlot_9
       rect:
         serializedVersion: 2
-        x: 132
+        x: 128
         y: 64
-        width: 24
+        width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -417,12 +417,12 @@ TextureImporter:
       name: PowerSourceSlot_10
       rect:
         serializedVersion: 2
-        x: 4
-        y: 64
-        width: 24
-        height: 11
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -439,12 +439,12 @@ TextureImporter:
       name: PowerSourceSlot_11
       rect:
         serializedVersion: 2
-        x: 36
-        y: 64
-        width: 24
-        height: 11
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -461,12 +461,12 @@ TextureImporter:
       name: PowerSourceSlot_12
       rect:
         serializedVersion: 2
-        x: 68
-        y: 64
-        width: 24
-        height: 11
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -483,12 +483,12 @@ TextureImporter:
       name: PowerSourceSlot_13
       rect:
         serializedVersion: 2
-        x: 100
-        y: 64
-        width: 24
-        height: 11
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -505,12 +505,12 @@ TextureImporter:
       name: PowerSourceSlot_14
       rect:
         serializedVersion: 2
-        x: 0
-        y: 36
+        x: 128
+        y: 32
         width: 32
-        height: 24
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -527,12 +527,12 @@ TextureImporter:
       name: PowerSourceSlot_15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 36
+        x: 0
+        y: 0
         width: 32
-        height: 24
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -549,12 +549,12 @@ TextureImporter:
       name: PowerSourceSlot_16
       rect:
         serializedVersion: 2
-        x: 64
-        y: 36
+        x: 32
+        y: 0
         width: 32
-        height: 24
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -571,12 +571,12 @@ TextureImporter:
       name: PowerSourceSlot_17
       rect:
         serializedVersion: 2
-        x: 96
-        y: 36
+        x: 64
+        y: 0
         width: 32
-        height: 24
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -593,12 +593,12 @@ TextureImporter:
       name: PowerSourceSlot_18
       rect:
         serializedVersion: 2
-        x: 128
-        y: 36
+        x: 96
+        y: 0
         width: 32
-        height: 24
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -615,12 +615,12 @@ TextureImporter:
       name: PowerSourceSlot_19
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4
-        width: 14
-        height: 24
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -633,187 +633,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_20
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 4
-        width: 11
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 94dad4c660fa8ff10800000000000000
-      internalID: 2303783651521703241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_21
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 4
-        width: 14
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9fe6e418f10039d0800000000000000
-      internalID: -2796733203582881889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_22
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 4
-        width: 11
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 37fd7cf334efd5ca0800000000000000
-      internalID: -6026381161565528205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_23
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 4
-        width: 14
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9402466fe0bea5c60800000000000000
-      internalID: 7807811353496002633
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_24
-      rect:
-        serializedVersion: 2
-        x: 85
-        y: 4
-        width: 11
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: af5564c7b177052a0800000000000000
-      internalID: -6750764881495566854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_25
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 4
-        width: 14
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 481f82d8d5eaf2a70800000000000000
-      internalID: 8804447513356071300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_26
-      rect:
-        serializedVersion: 2
-        x: 117
-        y: 4
-        width: 11
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f01f71d509aea9fe0800000000000000
-      internalID: -1181374046473293553
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PowerSourceSlot_27
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 4
-        width: 32
-        height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4fca6ac0c8da3990800000000000000
-      internalID: -7405368314716041393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a019f0caf6a0d6c4097fb0b6dd68b3d8
     internalID: 0
     vertices: []
     indices: 
@@ -821,7 +645,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       PowerSourceSlot_0: -4847393717878631899
       PowerSourceSlot_1: 2077867041491505896
@@ -836,14 +662,6 @@ TextureImporter:
       PowerSourceSlot_18: 2971475566096753393
       PowerSourceSlot_19: 9186930204181313685
       PowerSourceSlot_2: 6660679318252097641
-      PowerSourceSlot_20: 2303783651521703241
-      PowerSourceSlot_21: -2796733203582881889
-      PowerSourceSlot_22: -6026381161565528205
-      PowerSourceSlot_23: 7807811353496002633
-      PowerSourceSlot_24: -6750764881495566854
-      PowerSourceSlot_25: 8804447513356071300
-      PowerSourceSlot_26: -1181374046473293553
-      PowerSourceSlot_27: -7405368314716041393
       PowerSourceSlot_3: -3820573049367850309
       PowerSourceSlot_4: 3379206400514939266
       PowerSourceSlot_5: 7727511008119807695

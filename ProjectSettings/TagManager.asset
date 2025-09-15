@@ -57,6 +57,12 @@ TagManager:
   - name: Wall
     uniqueID: 1992436679
     locked: 0
+  - name: Battery
+    uniqueID: 1264381363
+    locked: 0
+  - name: Slot
+    uniqueID: 3057849705
+    locked: 0
   - name: Player
     uniqueID: 432246935
     locked: 0
