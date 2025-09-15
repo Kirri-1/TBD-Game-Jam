@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2659237109672916433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Move point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2837812869413721710}
   - component: {fileID: 730875936579082031}
   - component: {fileID: 1628773580492568810}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &730875936579082031
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -211,9 +211,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerContolerScripts
   isMoving: 0
+  isHoldingCell: 0
   moveSpeed: 5
   movePoint: {fileID: 2659237109672916433}
   gridOffset: 0.5
   colidables:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 640
+  pickableCell:
+    serializedVersion: 2
+    m_Bits: 128
+  MovingDirEnms: 0
+  pickUpPowerCellKey: 32
+  powerCell: {fileID: 0}
