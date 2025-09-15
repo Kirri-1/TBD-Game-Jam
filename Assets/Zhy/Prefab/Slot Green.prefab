@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3265841742460900987}
   m_Layer: 3
   m_Name: Slot Green
-  m_TagString: Untagged
+  m_TagString: Cell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

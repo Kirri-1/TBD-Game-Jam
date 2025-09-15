@@ -84,6 +84,8 @@ public class OnBreak : MonoBehaviour
             return;
         }
         powerSource.ResetAll();
+        Rigidbody2D rb = collider.gameObject.GetComponent<Rigidbody2D>();
+        rb.linearVelocity = Vector2.zero;
         Destroy(gameObject);
 
         return;
