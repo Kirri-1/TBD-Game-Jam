@@ -21,8 +21,14 @@ public class PowerCellManger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-            powerCellOb[0].TeleportPowerCell();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            for(int i = 0; i < powerCellOb.Count; i++)
+                {
+                    powerCellOb[i].TeleportPowerCell();
+                }
+        }
+        
     }
 
     // Getters

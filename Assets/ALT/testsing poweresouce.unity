@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   m_bulletManager: {fileID: 8030477728202577239, guid: 689912d372b23d04a9b930da5f9c19f7, type: 3}
-  m_powerCellManger: {fileID: 1790278763}
 --- !u!4 &37619116
 Transform:
   m_ObjectHideFlags: 0
@@ -430,7 +429,6 @@ GameObject:
   - component: {fileID: 1232592539}
   - component: {fileID: 1232592538}
   - component: {fileID: 1232592540}
-  - component: {fileID: 1232592541}
   m_Layer: 0
   m_Name: Smae wall
   m_TagString: Wall
@@ -562,17 +560,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 9059738702664949514, guid: 934d1bff7cf9a07439a5074669a7c3fe, type: 3}
   m_PrefabInstance: {fileID: 7865534143169884985}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1790278763 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 107758067382565035, guid: e454168e3358ad540b6d6bea9922f57e, type: 3}
-  m_PrefabInstance: {fileID: 4305145665725969887}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39f7ce86c1b7f40cea9a25f883badcd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PowerSourceManger
 --- !u!1 &1797088073 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1490372374104630773, guid: b76c0bad84427bc419711fcee04d7aca, type: 3}
@@ -1172,6 +1159,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 107758067382565035, guid: e454168e3358ad540b6d6bea9922f57e, type: 3}
+      propertyPath: powerCellOb.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 107758067382565035, guid: e454168e3358ad540b6d6bea9922f57e, type: 3}
+      propertyPath: powerCellInfo.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 107758067382565035, guid: e454168e3358ad540b6d6bea9922f57e, type: 3}
       propertyPath: 'powerCellOb.Array.data[0]'
       value: 
