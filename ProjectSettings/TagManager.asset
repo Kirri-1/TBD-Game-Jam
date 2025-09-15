@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Ground
   - Bullet
+  - Cell
+  - Wall
+  - Ice
+  - Breakables
+  - Buff
+  - Laser
+  - Teleporter
   layers:
   - Default
   - TransparentFX
@@ -13,10 +20,10 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Cell
+  - Player
+  - Wall
   - 
   - 
   - 
@@ -44,22 +51,25 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Floor
-    uniqueID: 2601242529
+    uniqueID: 16819419
     locked: 0
-  - name: Laser
-    uniqueID: 483707037
-    locked: 0
-  - name: Hole
-    uniqueID: 3235580087
-    locked: 0
-  - name: Ice
-    uniqueID: 564513847
-    locked: 0
-  - name: Player
-    uniqueID: 739911671
+  - name: Obstacle
+    uniqueID: 4170287163
     locked: 0
   - name: Wall
-    uniqueID: 509443001
+    uniqueID: 1992436679
+    locked: 0
+  - name: Battery
+    uniqueID: 1264381363
+    locked: 0
+  - name: Slot
+    uniqueID: 3057849705
+    locked: 0
+  - name: Player
+    uniqueID: 432246935
+    locked: 0
+  - name: Text
+    uniqueID: 4080262147
     locked: 0
   m_RenderingLayers:
   - Default
