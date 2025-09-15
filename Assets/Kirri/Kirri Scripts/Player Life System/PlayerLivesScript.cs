@@ -97,12 +97,12 @@ public class PlayerLivesScript : MonoBehaviour
     #region OnDeath
     private void OnDeath()
     {
-        SceneManager.LoadScene("Death Scene", LoadSceneMode.Single);  
+        SceneManager.LoadScene("Death", LoadSceneMode.Single);  
     }
     #endregion
 
     #region OnCollisionEnter2D
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Hazard"))
         {
@@ -113,7 +113,7 @@ public class PlayerLivesScript : MonoBehaviour
             GainLife();
             Destroy(collision.gameObject);
         }
-    }
+    }*/
     #endregion
 }
 

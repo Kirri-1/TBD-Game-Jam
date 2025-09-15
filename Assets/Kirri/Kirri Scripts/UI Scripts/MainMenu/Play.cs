@@ -49,7 +49,7 @@ public class Play : MonoBehaviour
         }
 
 
-        AsyncOperation unloadMenuScreen = SceneManager.UnloadSceneAsync("Main Menu");
+        AsyncOperation unloadMenuScreen = SceneManager.UnloadSceneAsync(thisScene);
         yield return unloadMenuScreen;
     }
 }

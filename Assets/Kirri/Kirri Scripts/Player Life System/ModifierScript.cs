@@ -7,9 +7,18 @@ public class ModifierScript : MonoBehaviour
     private ModifierType modifierType;
     PlayerLivesScript playerLivesScript;
 
+    /*private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!collision.gameObject.CompareTag("Player"))
+            return;
+        playerLivesScript = collision.gameObject.GetComponent<PlayerLivesScript>();
+
+        ModifyPlayerLife();
+    }*/
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (!collision.CompareTag("Player"))
             return;
         playerLivesScript = collision.GetComponent<PlayerLivesScript>();
 

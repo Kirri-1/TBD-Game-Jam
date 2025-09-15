@@ -20,5 +20,6 @@ public class QuitPause : MonoBehaviour
     private void OnButtonClicked()
     {
         SceneManager.LoadScene("Main Menu");
+        Resume.ResumeGame();
     }
 }

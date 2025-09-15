@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Ice
   - Breakables
+  - Buff
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SlidingOnIce : MonoBehaviour //scrapped
 {
-    PlayerMovement m_playerMovement;
+    /*PlayerMovement m_playerMovement;
     private Vector2 m_slideDirection;
     Rigidbody2D m_playerRb;
     [SerializeField] private float m_iceSpeed = 3f;
@@ -107,5 +107,5 @@ public class SlidingOnIce : MonoBehaviour //scrapped
         }
         m_playerMovement.isSliding = false;
         m_coroutineIsStarted = false;
-    }
+    }*/
 }
