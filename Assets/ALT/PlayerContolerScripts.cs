@@ -58,7 +58,7 @@ public class PlayerContolerScripts : MonoBehaviour
         if (isHoldingCell)
             addCellWith = 1;
         // Move the postion of the player
-        rb2D.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
         // If player has moved enough away from the start to end point 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
