@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 [System.Serializable]
 public class PowerCellScript : MonoBehaviour
@@ -19,7 +20,8 @@ public class PowerCellScript : MonoBehaviour
     private bool inCorectPlace = false;                     // In corect place
     [SerializeField]
     private bool isRoated = false;                          // When the spirte is roated
-
+    [SerializeField]
+    private CanPassThroughWall passThroughWall = CanPassThroughWall.blue;         // Can go through walls
     [Space(10)]
     [SerializeField]
     private int teleportObjColID = 0;                       // Teleport object collied ID
@@ -123,6 +125,9 @@ public class PowerCellScript : MonoBehaviour
 
     // In correct place get
     public bool GetInCorectPlace { get { return inCorectPlace; }}
+
+    // Can go through walls
+    public CanPassThroughWall GetCanGoThroughWall { get { return passThroughWall; } }
     #endregion
 
     #region Holding
