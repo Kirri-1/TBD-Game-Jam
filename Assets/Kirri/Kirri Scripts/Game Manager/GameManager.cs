@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,11 @@ public class GameManager : MonoBehaviour
     private HashSet<string> ignoreScenes = new HashSet<string> { "Death Scene", "Main Menu", "Pause" };
     [SerializeField]
     private BulletGameManager m_bulletManager;
+
+    [SerializeField]
+    private List<string> allScenes = new List<string>();
+
+    public static List<string> AllScenes;
 
     private void Awake()
     {
@@ -24,6 +30,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        StartCoroutine(WaitForGameToLoad());
         InstantiateAll();
     }
 
@@ -37,6 +44,29 @@ public class GameManager : MonoBehaviour
 
     private void InstantiateAll()
     {
-        BulletGameManager.EnsureExists(m_bulletManager);
+        var bulletManger = InstantiateWithoutClone(m_bulletManager);
+    }
+
+    private IEnumerator WaitForGameToLoad(float time = 2f)
+    {
+        yield return new WaitForSeconds(time);
+
+        AllScenes = new List<string>(allScenes);
+    }
+
+    private T InstantiateWithoutClone<T>(T prefab) where T : MonoBehaviour
+    {
+        if (prefab == null) return null;
+
+        // Instantiate the prefab
+        T instance = Instantiate(prefab);
+
+        // Remove the "(Clone)" suffix
+        instance.gameObject.name = prefab.gameObject.name;
+
+        // Optional: persist across scenes
+        DontDestroyOnLoad(instance.gameObject);
+
+        return instance;
     }
 }

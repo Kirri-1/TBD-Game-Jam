@@ -1,48 +1,83 @@
+#region Namespaces
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#endregion
 
 public class FinishLevel : MonoBehaviour
 {
+    #region Variables
     private bool levelCompleted = false;
     private List<PowerCellScript> powerCellScripts = new List<PowerCellScript>();
-    string thisScene = SceneManager.GetActiveScene().name;
+    string thisScene;
+    private bool startUpdate;
+    private List<bool> m_finished = new List<bool>();
+    #endregion
+    [SerializeField]
+    private List<string> m_scenes;
+
+    #region Start
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach(var powerCell in FindObjectsByType<PowerCellScript>(FindObjectsSortMode.None))
+        if (powerCellScripts.Count > 0)
         {
-            if (powerCellScripts.Contains(powerCell))
-                continue;
-            powerCellScripts.Add(powerCell); 
+            powerCellScripts.Clear();
         }
-    }
+        m_scenes = new List<string>(GameManager.AllScenes);
 
+
+        startUpdate = false;
+        StartCoroutine(GetCells());
+    }
+    #endregion
+
+    #region Update
     // Update is called once per frame
     void Update()
     {
-        if (!levelCompleted)
+        HandleUpdate();
+    }
+    #endregion
+
+    #region HandleUpdate
+    void HandleUpdate()
+    {
+        if (!startUpdate || levelCompleted)
+            return;
+
+        for (int i = 0; i < powerCellScripts.Count; i++)
         {
-            FinishLevels();
+            m_finished[i] = powerCellScripts[i].inCorectPlace;
+        }
+
+        if (m_finished.All(f => f))
+        {
+            levelCompleted = true;
+            ImprovedSwitchScene();
         }
     }
+    #endregion
 
-    void FinishLevels()
+    void ImprovedSwitchScene()
     {
 
-        foreach (var correctPlace in powerCellScripts)
-        {
+        thisScene = SceneManager.GetActiveScene().name;
+        int listLength = m_scenes.Count;
 
-            if (!correctPlace.inCorectPlace)
-            {
-                Debug.Log($"Not in correct place: {correctPlace.name}");
-                return;
-            }
-        }
+        int index = m_scenes.IndexOf(thisScene);
+        string nextScene = (index >= 0 && index + 1 < m_scenes.Count) ? m_scenes[index + 1] : "Main Menu";
 
+        StartScene(nextScene);
+    }
 
 
+    #region SwitchScene
+    void SwitchScene()
+    {
+        thisScene = SceneManager.GetActiveScene().name;
         switch (thisScene)
         {
             case "Level 1":
@@ -59,13 +94,18 @@ public class FinishLevel : MonoBehaviour
                 break;
         }
         levelCompleted = true;
+        return; //gonna be doing some experimenting so doing this now so nothing breaks during it
     }
+    #endregion
 
+    #region StartScene
     void StartScene(string sceneName)
     {
         StartCoroutine(NextScene(sceneName));
     }
+    #endregion
 
+    #region NextScene
     private IEnumerator NextScene(string sceneName)
     {
         string thisSceneName = SceneManager.GetActiveScene().name;
@@ -80,4 +120,20 @@ public class FinishLevel : MonoBehaviour
         AsyncOperation unloadScene = SceneManager.UnloadSceneAsync(thisSceneName);
         yield return unloadScene;
     }
+    #endregion
+
+    #region GetCells
+    private IEnumerator GetCells(float waitSeconds = 1)
+    {
+        yield return new WaitForSeconds(waitSeconds);
+        foreach (var powerCell in FindObjectsByType<PowerCellScript>(FindObjectsSortMode.None))
+        {
+            if (powerCellScripts.Contains(powerCell))
+                continue;
+            powerCellScripts.Add(powerCell);
+        }
+        startUpdate = true;
+        m_finished = new List<bool>(new bool[powerCellScripts.Count]);
+    }
+    #endregion
 }

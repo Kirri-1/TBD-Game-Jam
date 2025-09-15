@@ -7,6 +7,13 @@ public class Play : MonoBehaviour
 {
     Button button;
     string thisScene = "Main Menu";
+    [SerializeField]
+    private GameObject gameManager;
+
+    private void Start()
+    {
+        Instantiate(gameManager);
+    }
     private void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;

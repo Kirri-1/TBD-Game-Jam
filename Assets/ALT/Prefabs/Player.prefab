@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1628773580492568810}
   - component: {fileID: 5793338788809202845}
   - component: {fileID: 3731218409983950945}
+  - component: {fileID: 7881384880990345126}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -316,6 +317,18 @@ MonoBehaviour:
   m_bulletSpawn: {fileID: 3628312503470874719}
   m_canShoot: 1
   timer: 0.5
+--- !u!114 &7881384880990345126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5887514652061688657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3882f93d9dad6b648bee22a1da759d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pause
 --- !u!1 &6284176121784887523
 GameObject:
   m_ObjectHideFlags: 0
