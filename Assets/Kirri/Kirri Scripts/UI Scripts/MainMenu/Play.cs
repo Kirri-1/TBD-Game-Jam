@@ -22,8 +22,6 @@ public class Play : MonoBehaviour
 
     private void OnButtonClicked()
     {
-        //SceneManager.LoadScene("Level 1");
-
         StartCoroutine(UnloadMainScene());
     }
 
@@ -33,7 +31,7 @@ public class Play : MonoBehaviour
         yield return loadDevScene;
 
 
-        nextScene = SceneManager.GetSceneByName("Kirri Dev Scene");
+        nextScene = SceneManager.GetSceneByName("Level 1");
         SceneManager.SetActiveScene(nextScene);
 
         AsyncOperation loadPauseScene = SceneManager.LoadSceneAsync("Pause", LoadSceneMode.Additive);
