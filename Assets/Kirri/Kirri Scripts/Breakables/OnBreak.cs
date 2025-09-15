@@ -21,13 +21,13 @@ public class OnBreak : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        m_bulletManager = GameObject.Find("Bullet Game Manager(Clone)").GetComponent<BulletGameManager>();
+        m_bulletManager = GameObject.Find("Bullet Game Manager").GetComponent<BulletGameManager>();
         if (m_bulletManager == null)
             return;
         if (m_bulletManager == null)
         {
             DebugHelper.CriticalNullReferenceLogger(this, typeof(BulletGameManager), "Start() =>",
-                "m_bulletManager = GameObject.Find(\"Bullet Game Manager(Clone)\").GetComponent<BulletGameManager>();", gameObject, m_bulletManager != null);
+                "m_bulletManager = GameObject.Find(\"Bullet Game Manager\").GetComponent<BulletGameManager>();", gameObject, m_bulletManager != null);
             return;
         }
         if (m_bulletManager.m_excludedTagsBreakables == null || m_bulletManager.m_excludedTagsBreakables.Count == 0)
