@@ -2418,6 +2418,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &710138205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 710138207}
+  - component: {fileID: 710138206}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &710138206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710138205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dd4c45c900f8b4eb42778e1ebd42ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  m_bulletManager: {fileID: 8030477728202577239, guid: 689912d372b23d04a9b930da5f9c19f7, type: 3}
+--- !u!4 &710138207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710138205}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.21937, y: 0.13836, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &996395251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2693,7 +2738,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2012563044665184422, guid: 380e81e3c37004ac1a427543f461243d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 14.56
       objectReference: {fileID: 0}
     - target: {fileID: 2012563044665184422, guid: 380e81e3c37004ac1a427543f461243d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2980,7 +3025,7 @@ GameObject:
   - component: {fileID: 1688314119}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4391,3 +4436,4 @@ SceneRoots:
   - {fileID: 1598366260}
   - {fileID: 996395254}
   - {fileID: 1140865135}
+  - {fileID: 710138207}

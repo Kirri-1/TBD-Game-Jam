@@ -12,7 +12,7 @@ public class MoveBullet : MonoBehaviour
     [SerializeField] private float speed = 10f;
     private readonly string[] excludedTags = { "Player", "Bullet", "Ground", "Cell", "Breakables"};
     private PlayerMovement m_playerMovement;
-    private bool isSliding => m_playerMovement.isSliding;
+    // private bool isSliding => m_playerMovement.isSliding;
     #endregion
 
     void Awake()
@@ -22,17 +22,17 @@ public class MoveBullet : MonoBehaviour
         m_playerMovement = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
     }
 
-    private void Update()
-    {
-        if (isSliding)
-        {
-            speed = 20f;
-        }
-        else
-        {
-            speed = 10f;
-        }
-    }
+    // private void Update()
+    // {
+    //     if (isSliding)
+    //     {
+    //         speed = 20f;
+    //     }
+    //     else
+    //     {
+    //         speed = 10f;
+    //     }
+    // }
     void FixedUpdate()
     {
 
