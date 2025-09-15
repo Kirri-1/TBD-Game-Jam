@@ -1,0 +1,19 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Kirri/Kirri%20Scenes/Sample.uss?fileID=7433441132597879392&amp;guid=52b162db0960a81428216d89b1c161f4&amp;type=3#Sample" />
+    <ui:VisualElement style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement style="flex-grow: 0; height: 40%;">
+            <ui:Label text="Game Over" style="font-size: 80px; -unity-text-align: middle-center; color: rgb(0, 0, 0); background-color: rgb(255, 0, 0); width: 540px; left: 720px; top: 76px;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; height: 118px;">
+            <ui:Button text="Button" name="Resume" class="button-blue buttone-blue" style="background-color: rgba(6, 128, 255, 0); color: rgba(27, 27, 27, 0); width: 43%; left: 583px; height: 125px;">
+                <ui:VisualElement style="flex-grow: 1; background-image: resource(&apos;UI Buttons/ButtonText3&apos;);" />
+            </ui:Button>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 0; height: 151px;" />
+        <ui:VisualElement style="flex-grow: 0; height: 151px;">
+            <ui:Button text="Button" name="Quit" class="button-blue buttone-blue" style="background-color: rgba(6, 128, 255, 0); color: rgba(27, 27, 27, 0); width: 30%; left: 714px; height: 131px;">
+                <ui:VisualElement style="flex-grow: 1; background-image: resource(&apos;UI Buttons/ButtonText2&apos;);" />
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
