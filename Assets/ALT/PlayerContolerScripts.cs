@@ -2,8 +2,12 @@ using UnityEngine;
 
 public class PlayerContolerScripts : MonoBehaviour
 {
-    public bool isMoving = false;
+    [SerializeField]
+    private bool isMoving = false;
+    [SerializeField]
+    private Animator animator;
     public bool isHoldingCell = false;
+
 
     public float moveSpeed = 5;
     public Transform movePoint;
@@ -11,7 +15,7 @@ public class PlayerContolerScripts : MonoBehaviour
 
     [Space(10)]
     public LayerMask colidables;
-    public LayerMask pickableCell;
+    private int LastFaceDirection = 0;
 
     [Space(10)]
     public MovingDir MovingDirEnms = MovingDir.up;
@@ -30,26 +34,27 @@ public class PlayerContolerScripts : MonoBehaviour
         float xInput = Input.GetAxisRaw("Horizontal");
         float yInput = Input.GetAxisRaw("Vertical");
 
-        // X dir
-        if (xInput <= -1)
-            MovingDirEnms = MovingDir.left;
-
-        else if (xInput >= 1)
-            MovingDirEnms = MovingDir.right;
-
-        // Y dir
-        else if (yInput <= -1)
-            MovingDirEnms = MovingDir.down;
-
-        else if (yInput >= 1)
-            MovingDirEnms = MovingDir.up;
-
+        animator.SetFloat("Horizontal", xInput);
+        animator.SetFloat("Vertical", yInput);
+        animator.SetFloat("Speed", new Vector2(xInput, yInput).sqrMagnitude);
+        
+        if (xInput != 0 || yInput != 0)
+        {
+            if (Mathf.Abs(xInput) == 1f)
+            {
+                LastFaceDirection = (int)xInput;
+            }
+            if (Mathf.Abs(yInput) == 1f)
+            {
+                LastFaceDirection = (int)yInput * 2;
+            }
+        }
+        animator.SetFloat("LastFaceDirection", LastFaceDirection);
 
         // Add extra space for power cell
         int addCellWith = 0;
         if (isHoldingCell)
             addCellWith = 1;
-
         // Move the postion of the player
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
