@@ -7,7 +7,6 @@ public class Play : MonoBehaviour
 {
     Button button;
     string thisScene = "Main Menu";
-    Scene nextScene;
     private void OnEnable()
     {
         var root = GetComponent<UIDocument>().rootVisualElement;
@@ -27,11 +26,11 @@ public class Play : MonoBehaviour
 
     private IEnumerator UnloadMainScene()
     {
-        AsyncOperation loadDevScene = SceneManager.LoadSceneAsync("Kirri Dev Scene", LoadSceneMode.Additive);
+        AsyncOperation loadDevScene = SceneManager.LoadSceneAsync("Level 1", LoadSceneMode.Additive);
         yield return loadDevScene;
 
 
-        nextScene = SceneManager.GetSceneByName("Level 1");
+        Scene nextScene = SceneManager.GetSceneByName("Level 1");
         SceneManager.SetActiveScene(nextScene);
 
         AsyncOperation loadPauseScene = SceneManager.LoadSceneAsync("Pause", LoadSceneMode.Additive);

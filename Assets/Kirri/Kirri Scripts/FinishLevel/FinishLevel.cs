@@ -7,11 +7,14 @@ public class FinishLevel : MonoBehaviour
 {
     private bool levelCompleted = false;
     private List<PowerCellScript> powerCellScripts = new List<PowerCellScript>();
+    string thisScene = SceneManager.GetActiveScene().name;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         foreach(var powerCell in FindObjectsByType<PowerCellScript>(FindObjectsSortMode.None))
         {
+            if (powerCellScripts.Contains(powerCell))
+                return;
             powerCellScripts.Add(powerCell); 
         }
     }
@@ -30,12 +33,34 @@ public class FinishLevel : MonoBehaviour
 
         foreach (var correctPlace in powerCellScripts)
         {
+            if (correctPlace == null)
+            {
+                switch (thisScene)
+                {
+                    case "Level 1":
+                        StartScene("Level 2");
+                        break;
+
+                    case "Level 2":
+                        StartScene("Level 3");
+                        break;
+
+                    case "Level 3":
+                        SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+                        Debug.Log("yo");
+                        break;
+                }
+
+            }
+
             if (!correctPlace.inCorectPlace)
-                return; 
+            {
+                Debug.Log($"Not in correct place: {correctPlace.name}");
+                return;
+            }
         }
 
 
-        string thisScene = SceneManager.GetActiveScene().name;
 
         switch (thisScene)
         {
@@ -49,7 +74,7 @@ public class FinishLevel : MonoBehaviour
 
             case "Level 3":
                 SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
-
+                Debug.Log("yo");
                 break;
         }
         levelCompleted = true;

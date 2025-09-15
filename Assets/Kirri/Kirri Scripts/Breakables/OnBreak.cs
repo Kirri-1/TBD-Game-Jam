@@ -23,6 +23,8 @@ public class OnBreak : MonoBehaviour
     {
         m_bulletManager = GameObject.Find("Bullet Game Manager(Clone)").GetComponent<BulletGameManager>();
         if (m_bulletManager == null)
+            return;
+        if (m_bulletManager == null)
         {
             DebugHelper.CriticalNullReferenceLogger(this, typeof(BulletGameManager), "Start() =>",
                 "m_bulletManager = GameObject.Find(\"Bullet Game Manager(Clone)\").GetComponent<BulletGameManager>();", gameObject, m_bulletManager != null);
