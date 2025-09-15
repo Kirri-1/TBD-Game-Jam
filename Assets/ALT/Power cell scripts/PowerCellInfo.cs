@@ -21,9 +21,6 @@ public class PowerCellInfo
     [Space(5)]
     [Header("Interactble")]
     [SerializeField]
-    private LayerMask toIgnoreLayers;                       // Ignoring layers
-
-    [SerializeField]
     private GameObject corectPlace = null;                  // Correct Place
 
     [SerializeField]
@@ -36,7 +33,6 @@ public class PowerCellInfo
     public Sprite GetNormalSpr { get { return normalSpr; } set { normalSpr = value; } }
     public Sprite GetRoatedSpr { get { return roatedSpr; } set { roatedSpr = value; } }
     public PowerCellData GetPowerCellData { get { return powerCellData; } set { powerCellData = value; } }
-    public LayerMask GetLayerToIgnore { get { return toIgnoreLayers; } set { toIgnoreLayers = value; } }
     public GameObject GetCorectPlace { get { return corectPlace; } set { corectPlace = value; } }
     public List<GameObject> GetCanGetDamgeObj { get { return canGetDamgeObj; } set { canGetDamgeObj = value; } }
     public List<GameObject> GetTeleportObjs { get { return teleportObj; } set { teleportObj = value; } }

@@ -6,10 +6,9 @@ public class PowerCellScript : MonoBehaviour
 {
     #region Verbals
     [SerializeField]
-    private Vector3 startPos = Vector3.zero;              // Starting postion
+    private Vector3 startPos = Vector3.zero;                // Starting postion
     [SerializeField]
-    private int helth = 0;                                // Health
-
+    private int helth = 0;                                  // Health
 
     [Header("Bools")]
     [SerializeField]                                        
@@ -40,7 +39,6 @@ public class PowerCellScript : MonoBehaviour
         helth = powerInfo.GetPowerCellData.health;
 
         this.gameObject.GetComponent<SpriteRenderer>().sprite = powerInfo.GetNormalSpr;
-        this.gameObject.GetComponent<BoxCollider2D>().excludeLayers = powerInfo.GetLayerToIgnore;
     }
 
     // Get the power cell data
@@ -130,6 +128,7 @@ public class PowerCellScript : MonoBehaviour
     #region Holding
     public void HoldPowerCell(Vector3 playerPos, MovingDir movingDir)
     {
+        isHolding = true;
         Vector3 setPos = Vector3.zero;
 
         // Up
@@ -145,7 +144,7 @@ public class PowerCellScript : MonoBehaviour
         else if (movingDir == MovingDir.right)
             setPos = new Vector3(playerPos.x + this.transform.localScale.x, playerPos.y, 0);
 
-        this.transform.position = setPos;
+        transform.position = setPos;
     }
 
     #endregion
