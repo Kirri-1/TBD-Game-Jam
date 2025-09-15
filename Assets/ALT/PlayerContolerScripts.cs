@@ -20,11 +20,13 @@ public class PlayerContolerScripts : MonoBehaviour
     [Space(10)]
     public MovingDir MovingDirEnms = MovingDir.up;
     public KeyCode pickUpPowerCellKey = KeyCode.Space;
+    public Rigidbody2D rb2D = null;
 
     void Start()
     {
         movePoint.parent = null;
         movePoint.position = this.transform.position;
+        rb2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -56,7 +58,7 @@ public class PlayerContolerScripts : MonoBehaviour
         if (isHoldingCell)
             addCellWith = 1;
         // Move the postion of the player
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
+        rb2D.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed * Time.deltaTime);
 
         // If player has moved enough away from the start to end point 
         if (Vector3.Distance(transform.position, movePoint.position) <= 0.05f)
