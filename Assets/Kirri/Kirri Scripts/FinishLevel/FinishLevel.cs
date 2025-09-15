@@ -31,26 +31,26 @@ public class FinishLevel : MonoBehaviour
         foreach (var correctPlace in powerCellScripts)
         {
             if (!correctPlace.inCorectPlace)
-                return;
+                return; 
+        }
 
 
-            string thisScene = SceneManager.GetActiveScene().name;
+        string thisScene = SceneManager.GetActiveScene().name;
 
-            switch (thisScene)
-            {
-                case "Level 1":
-                    StartScene("Level 2");
-                        break;
+        switch (thisScene)
+        {
+            case "Level 1":
+                StartScene("Level 2");
+                break;
 
-                case "Level 2":
-                    StartScene("Level 3");
-                    break;
+            case "Level 2":
+                StartScene("Level 3");
+                break;
 
-                case "Level 3":
-                    SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
+            case "Level 3":
+                SceneManager.LoadScene("Main Menu", LoadSceneMode.Single);
 
-                    break;
-            }
+                break;
         }
         levelCompleted = true;
     }
