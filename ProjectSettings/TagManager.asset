@@ -11,6 +11,8 @@ TagManager:
   - Ice
   - Breakables
   - Buff
+  - Laser
+  - Teleporter
   layers:
   - Default
   - TransparentFX

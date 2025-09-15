@@ -44,6 +44,11 @@ public class MoveBullet : MonoBehaviour
     {
         if (excludedTags.Contains(collision.gameObject.tag))
             return;
+        if (collision.gameObject.CompareTag("Cell"))
+        {
+            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            rb.linearVelocity = Vector2.zero;
+        }
 
         Destroy(gameObject);
     }

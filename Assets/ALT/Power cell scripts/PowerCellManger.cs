@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class PowerCellManger : MonoBehaviour
 {
+    public static PowerCellManger Instance;
     [SerializeField]
     private List<PowerCellScript> powerCellOb = new();
 
